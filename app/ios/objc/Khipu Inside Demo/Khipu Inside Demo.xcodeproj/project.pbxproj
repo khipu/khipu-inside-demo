@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A1AB8E920ED701800D0907D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1AB8E820ED701800D0907D /* AppDelegate.m */; };
+		4A1AB8EC20ED701800D0907D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1AB8EB20ED701800D0907D /* ViewController.m */; };
+		4A1AB8EF20ED701800D0907D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1AB8ED20ED701800D0907D /* Main.storyboard */; };
+		4A1AB8F120ED701800D0907D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1AB8F020ED701800D0907D /* Assets.xcassets */; };
+		4A1AB8F420ED701800D0907D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1AB8F220ED701800D0907D /* LaunchScreen.storyboard */; };
+		4A1AB8F720ED701800D0907D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1AB8F620ED701800D0907D /* main.m */; };
+		4A1AB90120ED701900D0907D /* Khipu_Inside_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1AB90020ED701900D0907D /* Khipu_Inside_DemoTests.m */; };
+		4A1AB90C20ED701900D0907D /* Khipu_Inside_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1AB90B20ED701900D0907D /* Khipu_Inside_DemoUITests.m */; };
+		7824580F7B2D12942E9F564C /* Pods_Khipu_Inside_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221C77851E2E6A48AC45727A /* Pods_Khipu_Inside_Demo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A1AB8FD20ED701800D0907D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A1AB8DC20ED701800D0907D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A1AB8E320ED701800D0907D;
+			remoteInfo = "Khipu Inside Demo";
+		};
+		4A1AB90820ED701900D0907D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A1AB8DC20ED701800D0907D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A1AB8E320ED701800D0907D;
+			remoteInfo = "Khipu Inside Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		221C77851E2E6A48AC45727A /* Pods_Khipu_Inside_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Khipu_Inside_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38C38FAAC31F2F09BF6C4F6D /* Pods-Khipu Inside Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khipu Inside Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Khipu Inside Demo/Pods-Khipu Inside Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		4A1AB8E420ED701800D0907D /* Khipu Inside Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Khipu Inside Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A1AB8E720ED701800D0907D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4A1AB8E820ED701800D0907D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4A1AB8EA20ED701800D0907D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4A1AB8EB20ED701800D0907D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4A1AB8EE20ED701800D0907D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A1AB8F020ED701800D0907D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A1AB8F320ED701800D0907D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A1AB8F520ED701800D0907D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A1AB8F620ED701800D0907D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4A1AB8FC20ED701800D0907D /* Khipu Inside DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Khipu Inside DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A1AB90020ED701900D0907D /* Khipu_Inside_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Khipu_Inside_DemoTests.m; sourceTree = "<group>"; };
+		4A1AB90220ED701900D0907D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A1AB90720ED701900D0907D /* Khipu Inside DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Khipu Inside DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A1AB90B20ED701900D0907D /* Khipu_Inside_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Khipu_Inside_DemoUITests.m; sourceTree = "<group>"; };
+		4A1AB90D20ED701900D0907D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78131C5F17A8E6ABFD491C25 /* Pods-Khipu Inside Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khipu Inside Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Khipu Inside Demo/Pods-Khipu Inside Demo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A1AB8E120ED701800D0907D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7824580F7B2D12942E9F564C /* Pods_Khipu_Inside_Demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1AB8F920ED701800D0907D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1AB90420ED701900D0907D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		354A53B7EC7500A8667A81F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38C38FAAC31F2F09BF6C4F6D /* Pods-Khipu Inside Demo.debug.xcconfig */,
+				78131C5F17A8E6ABFD491C25 /* Pods-Khipu Inside Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4A1AB8DB20ED701800D0907D = {
+			isa = PBXGroup;
+			children = (
+				4A1AB8E620ED701800D0907D /* Khipu Inside Demo */,
+				4A1AB8FF20ED701800D0907D /* Khipu Inside DemoTests */,
+				4A1AB90A20ED701900D0907D /* Khipu Inside DemoUITests */,
+				4A1AB8E520ED701800D0907D /* Products */,
+				354A53B7EC7500A8667A81F8 /* Pods */,
+				AB9FF2BA46EEE22BDEAE141A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4A1AB8E520ED701800D0907D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A1AB8E420ED701800D0907D /* Khipu Inside Demo.app */,
+				4A1AB8FC20ED701800D0907D /* Khipu Inside DemoTests.xctest */,
+				4A1AB90720ED701900D0907D /* Khipu Inside DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A1AB8E620ED701800D0907D /* Khipu Inside Demo */ = {
+			isa = PBXGroup;
+			children = (
+				4A1AB8E720ED701800D0907D /* AppDelegate.h */,
+				4A1AB8E820ED701800D0907D /* AppDelegate.m */,
+				4A1AB8EA20ED701800D0907D /* ViewController.h */,
+				4A1AB8EB20ED701800D0907D /* ViewController.m */,
+				4A1AB8ED20ED701800D0907D /* Main.storyboard */,
+				4A1AB8F020ED701800D0907D /* Assets.xcassets */,
+				4A1AB8F220ED701800D0907D /* LaunchScreen.storyboard */,
+				4A1AB8F520ED701800D0907D /* Info.plist */,
+				4A1AB8F620ED701800D0907D /* main.m */,
+			);
+			path = "Khipu Inside Demo";
+			sourceTree = "<group>";
+		};
+		4A1AB8FF20ED701800D0907D /* Khipu Inside DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A1AB90020ED701900D0907D /* Khipu_Inside_DemoTests.m */,
+				4A1AB90220ED701900D0907D /* Info.plist */,
+			);
+			path = "Khipu Inside DemoTests";
+			sourceTree = "<group>";
+		};
+		4A1AB90A20ED701900D0907D /* Khipu Inside DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A1AB90B20ED701900D0907D /* Khipu_Inside_DemoUITests.m */,
+				4A1AB90D20ED701900D0907D /* Info.plist */,
+			);
+			path = "Khipu Inside DemoUITests";
+			sourceTree = "<group>";
+		};
+		AB9FF2BA46EEE22BDEAE141A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				221C77851E2E6A48AC45727A /* Pods_Khipu_Inside_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A1AB8E320ED701800D0907D /* Khipu Inside Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A1AB91020ED701900D0907D /* Build configuration list for PBXNativeTarget "Khipu Inside Demo" */;
+			buildPhases = (
+				359C79E3416B579CAD151504 /* [CP] Check Pods Manifest.lock */,
+				4A1AB8E020ED701800D0907D /* Sources */,
+				4A1AB8E120ED701800D0907D /* Frameworks */,
+				4A1AB8E220ED701800D0907D /* Resources */,
+				622F735612C7905E6585D102 /* [CP] Embed Pods Frameworks */,
+				2C726B0B4553E56DEF5EA80C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Khipu Inside Demo";
+			productName = "Khipu Inside Demo";
+			productReference = 4A1AB8E420ED701800D0907D /* Khipu Inside Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A1AB8FB20ED701800D0907D /* Khipu Inside DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A1AB91320ED701900D0907D /* Build configuration list for PBXNativeTarget "Khipu Inside DemoTests" */;
+			buildPhases = (
+				4A1AB8F820ED701800D0907D /* Sources */,
+				4A1AB8F920ED701800D0907D /* Frameworks */,
+				4A1AB8FA20ED701800D0907D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A1AB8FE20ED701800D0907D /* PBXTargetDependency */,
+			);
+			name = "Khipu Inside DemoTests";
+			productName = "Khipu Inside DemoTests";
+			productReference = 4A1AB8FC20ED701800D0907D /* Khipu Inside DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A1AB90620ED701900D0907D /* Khipu Inside DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A1AB91620ED701900D0907D /* Build configuration list for PBXNativeTarget "Khipu Inside DemoUITests" */;
+			buildPhases = (
+				4A1AB90320ED701900D0907D /* Sources */,
+				4A1AB90420ED701900D0907D /* Frameworks */,
+				4A1AB90520ED701900D0907D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A1AB90920ED701900D0907D /* PBXTargetDependency */,
+			);
+			name = "Khipu Inside DemoUITests";
+			productName = "Khipu Inside DemoUITests";
+			productReference = 4A1AB90720ED701900D0907D /* Khipu Inside DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A1AB8DC20ED701800D0907D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Emilio Davis";
+				TargetAttributes = {
+					4A1AB8E320ED701800D0907D = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					4A1AB8FB20ED701800D0907D = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 4A1AB8E320ED701800D0907D;
+					};
+					4A1AB90620ED701900D0907D = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 4A1AB8E320ED701800D0907D;
+					};
+				};
+			};
+			buildConfigurationList = 4A1AB8DF20ED701800D0907D /* Build configuration list for PBXProject "Khipu Inside Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A1AB8DB20ED701800D0907D;
+			productRefGroup = 4A1AB8E520ED701800D0907D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A1AB8E320ED701800D0907D /* Khipu Inside Demo */,
+				4A1AB8FB20ED701800D0907D /* Khipu Inside DemoTests */,
+				4A1AB90620ED701900D0907D /* Khipu Inside DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A1AB8E220ED701800D0907D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A1AB8F420ED701800D0907D /* LaunchScreen.storyboard in Resources */,
+				4A1AB8F120ED701800D0907D /* Assets.xcassets in Resources */,
+				4A1AB8EF20ED701800D0907D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1AB8FA20ED701800D0907D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1AB90520ED701900D0907D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C726B0B4553E56DEF5EA80C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Khipu Inside Demo/Pods-Khipu Inside Demo-resources.sh",
+				"${PODS_ROOT}/khenshin/Products/khenshin.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/khenshin.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Khipu Inside Demo/Pods-Khipu Inside Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		359C79E3416B579CAD151504 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Khipu Inside Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		622F735612C7905E6585D102 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Khipu Inside Demo/Pods-Khipu Inside Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/JVFloatLabeledTextField/JVFloatLabeledTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/PPTopMostController/PPTopMostController.framework",
+				"${BUILT_PRODUCTS_DIR}/RaptureXML/RaptureXML.framework",
+				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JVFloatLabeledTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PPTopMostController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RaptureXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Khipu Inside Demo/Pods-Khipu Inside Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A1AB8E020ED701800D0907D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A1AB8EC20ED701800D0907D /* ViewController.m in Sources */,
+				4A1AB8F720ED701800D0907D /* main.m in Sources */,
+				4A1AB8E920ED701800D0907D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1AB8F820ED701800D0907D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A1AB90120ED701900D0907D /* Khipu_Inside_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A1AB90320ED701900D0907D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A1AB90C20ED701900D0907D /* Khipu_Inside_DemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A1AB8FE20ED701800D0907D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A1AB8E320ED701800D0907D /* Khipu Inside Demo */;
+			targetProxy = 4A1AB8FD20ED701800D0907D /* PBXContainerItemProxy */;
+		};
+		4A1AB90920ED701900D0907D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A1AB8E320ED701800D0907D /* Khipu Inside Demo */;
+			targetProxy = 4A1AB90820ED701900D0907D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A1AB8ED20ED701800D0907D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A1AB8EE20ED701800D0907D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4A1AB8F220ED701800D0907D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A1AB8F320ED701800D0907D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A1AB90E20ED701900D0907D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4A1AB90F20ED701900D0907D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A1AB91120ED701900D0907D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38C38FAAC31F2F09BF6C4F6D /* Pods-Khipu Inside Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X63E3W773;
+				INFOPLIST_FILE = "Khipu Inside Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.khipu.Khipu-Inside-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A1AB91220ED701900D0907D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78131C5F17A8E6ABFD491C25 /* Pods-Khipu Inside Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X63E3W773;
+				INFOPLIST_FILE = "Khipu Inside Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.khipu.Khipu-Inside-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A1AB91420ED701900D0907D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X63E3W773;
+				INFOPLIST_FILE = "Khipu Inside DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.khipu.Khipu-Inside-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Khipu Inside Demo.app/Khipu Inside Demo";
+			};
+			name = Debug;
+		};
+		4A1AB91520ED701900D0907D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X63E3W773;
+				INFOPLIST_FILE = "Khipu Inside DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.khipu.Khipu-Inside-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Khipu Inside Demo.app/Khipu Inside Demo";
+			};
+			name = Release;
+		};
+		4A1AB91720ED701900D0907D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X63E3W773;
+				INFOPLIST_FILE = "Khipu Inside DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.khipu.Khipu-Inside-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Khipu Inside Demo";
+			};
+			name = Debug;
+		};
+		4A1AB91820ED701900D0907D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X63E3W773;
+				INFOPLIST_FILE = "Khipu Inside DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.khipu.Khipu-Inside-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Khipu Inside Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A1AB8DF20ED701800D0907D /* Build configuration list for PBXProject "Khipu Inside Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A1AB90E20ED701900D0907D /* Debug */,
+				4A1AB90F20ED701900D0907D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A1AB91020ED701900D0907D /* Build configuration list for PBXNativeTarget "Khipu Inside Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A1AB91120ED701900D0907D /* Debug */,
+				4A1AB91220ED701900D0907D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A1AB91320ED701900D0907D /* Build configuration list for PBXNativeTarget "Khipu Inside DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A1AB91420ED701900D0907D /* Debug */,
+				4A1AB91520ED701900D0907D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A1AB91620ED701900D0907D /* Build configuration list for PBXNativeTarget "Khipu Inside DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A1AB91720ED701900D0907D /* Debug */,
+				4A1AB91820ED701900D0907D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A1AB8DC20ED701800D0907D /* Project object */;
+}

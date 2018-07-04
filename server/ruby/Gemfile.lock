@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ethon (0.11.0)
+      ffi (>= 1.3.0)
+    ffi (1.9.25)
+    json (2.1.0)
+    khipu-api-client (2.7.2)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
+    typhoeus (1.3.0)
+      ethon (>= 0.9.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  khipu-api-client
+
+BUNDLED WITH
+   1.16.2
