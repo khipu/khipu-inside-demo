@@ -171,5 +171,3 @@ En este repositorio se encuentran proyectos de ejemplo en:
 - Java (Gradle [ver documentación]() y Maven [ver documentación]())
 - Ruby [ver documentación]()
 - PHP [ver documentación]()
-
-
