@@ -1,6 +1,28 @@
-# Crear un pago usando usando el cliente Ruby
+#Crear un pago utilizando el cliente Ruby
 
-El cliente se distribuye como la Gema **khipu-api-client**, se recomienda usar [Bundler](https://bundler.io/) para manejar las dependencias.
+El cliente se distribuye como la Gema [khipu-api-client](https://rubygems.org/gems/khipu-api-client), se recomienda usar [Bundler](https://bundler.io/) para manejar las dependencias.
+
+Para crear un pago se utiliza el método client.payments_post del objeto Khipu::PaymentsApi
+
+```ruby
+require 'khipu-api-client'
+
+Khipu.configure do |c|
+c.secret = <Llave secreta>
+c.receiver_id = <ID de cobrador>
+c.platform = 'demo-client'
+c.platform_version = '2.0'
+#c.debugging = true
+end
+
+client = Khipu::PaymentsApi.new
+
+response = client.payments_post('Pago de demo', 'CLP', 100, {
+})
+
+print "PAYMENT_ID: " + response.payment_id + "\n"
+```
+En el respositorio se encuentra un ejemplo de uso.
 
 **Instalación de la gema**
 

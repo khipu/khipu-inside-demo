@@ -1,8 +1,34 @@
-El cliente se distribuye como un .jar y se recomienda utilizar para proyectos basados en [Gradle](https://gradle.org/) o [Maven](https://maven.apache.org/).
+#Crear un pago utilizando el cliente Java
+
+
+Para crear un pago se utiliza el método paymentsPost de la clase PaymentsApi
+
+```java
+Long receiverId = <ID de cobrador>;
+String secret = "<Llave secreta>";
+
+ApiClient apiClient = new ApiClient();
+apiClient.setKhipuCredentials(receiverId, secret);
+PaymentsApi paymentsApi = new PaymentsApi();
+paymentsApi.setApiClient(apiClient);
+
+Map<String, Object> options = new HashMap<>();
+
+PaymentsCreateResponse response = paymentsApi.paymentsPost("Pago de demo" //Motivo de la compra
+        , "CLP" //Moneda
+        , 100.0 //Monto
+        , options
+);
+
+System.out.println("PAYMENT_ID: " + response.getPaymentId());
+```
+
+Se pueden ejecutar ejemplos usando gradle o maven
+
 
 **Gradle**
 
-```
+```sh
 > cd server/java/gradle  
 > ./gradlew run
 
@@ -12,7 +38,7 @@ PAYMENT_ID: xxxxyyyyzzzz
 
 **Maven**
 
-```
+```sh
 > cd server/java/maven  
 > mvn exec:java
 
