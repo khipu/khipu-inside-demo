@@ -1,4 +1,6 @@
-El cliente se distribuye como una Gema, se recomienda usar [Bundler](https://bundler.io/) para manejar las dependencias.
+# Crear un pago usando usando el cliente Ruby
+
+El cliente se distribuye como la Gema **khipu-api-client**, se recomienda usar [Bundler](https://bundler.io/) para manejar las dependencias.
 
 **Instalación de la gema**
 
@@ -18,7 +20,7 @@ Use `bundle info [gemname]` to see where a bundled gem is installe
 
 **Ejecución de la demo**
 
-```
+```sh
 > cd server/ruby
 > ruby demo.rb
 
