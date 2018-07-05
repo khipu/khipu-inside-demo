@@ -19,6 +19,10 @@ Este repositorio es la documentación y ejemplo de como realizar una integració
 3. Una aplicación móvil para Android o IOS. En este documento se asumirá que la aplicación es nativa, pero existen plugins y bridges para otras tecnologías como Cordova, React Native, etc.
 
 
+## Definición del cobro a realizar (en la app del cobrador)
+
+En este punto el cliente define lo que pagará utilizando la app del cobrador. Puede ser un carro de compras, una compra única o cualquier otra modalidad que el cobrador defina. Para los efectos de la integración con Khipu Inside, sólo es relevante que queden definidos el motivo del pago, el monto a pagar y la moneda de éste.
+
 ## Creación de la solicitud de pago (en el servidor del cobrador)
 
 Para crear un solicitud de pago se utiliza la "[API de khipu para crear cobros y recibir pagos (v 2.0)](https://khipu.com/page/api)", esta es una API REST y Khipu disponibiliza clientes para esa API en Java, Ruby, PHP y .NET.
@@ -57,8 +61,8 @@ Embeber khipu dentro de la App tiene tres etapas.
 
 En este repositorio se encuentran proyectos de ejemplo en:
 
-- Android (Java [ver documentación]())
-- iOS (ObjC [ver documentación]() y Swift [ver documentación]()).
+- Android (Java [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/authorize-payment-android.md))
+- iOS (ObjC [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/authorize-payment-objc.md) y Swift [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/authorize-payment-swift.md)).
 
 
 ## Recepción de la notificación de conciliación (en el servidor del cobrador)
