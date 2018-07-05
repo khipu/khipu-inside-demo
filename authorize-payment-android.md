@@ -1,6 +1,8 @@
 # Autorizar el pago en una aplicación Android
 
-La biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un artefacto android privado. Para poder utilizarlo en tu App debes contar con acceso a nuestro repositorio privado: https://dev.khipu.com/nexus/content/repositories/browser2app
+La biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un artefacto android privado. Para poder utilizarlo en tu App debes contar con acceso a nuestro repositorio privado: https://dev.khipu.com/nexus/content/repositories/browser2app.
+
+En este repositorio se encuentra una App de demostración en la carpeta [app/android](https://github.com/khipu/khipu-inside-demo/tree/master/app/android) . Para ejecutarla se debe abrir con Android Studio o IntelliJ
 
 Los pasos necesarios para utilizar la biblioteca nativa android para Browser2app son:
 
