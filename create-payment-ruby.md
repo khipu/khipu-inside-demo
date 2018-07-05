@@ -2,7 +2,7 @@ El cliente se distribuye como una Gema, se recomienda usar [Bundler](https://bun
 
 **Instalación de la gema**
 
-```
+```sh
 > cd server/ruby
 > bundle install
 
