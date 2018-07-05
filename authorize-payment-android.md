@@ -72,10 +72,12 @@ public class Demo extends Application implements KhenshinApplication {
 
 En tu proyecto puedes determinar los colores que usará Khenshin en las pantallas de pago sobreescribiendo los siguiente parámetros en los recursos de tu proyecto (por ejemplo en un archivo colors.xml dentro de res/values)
 
-    <color name="khenshin_primary">#ca0814</color> <!-- Color de la barra de navegación y botón principal-->
-    <color name="khenshin_primary_dark">#580409</color> <!-- Color del status bar superior -->
-    <color name="khenshin_primary_text">#ffffff</color> <!-- Color del texto en la barra de navegación -->
-    <color name="khenshin_accent">#ca0814</color> <!-- Color de las decoraciones, por ejemplo barras de progreso -->
+```xml
+<color name="khenshin_primary">#ca0814</color> <!-- Color de la barra de navegación y botón principal-->
+<color name="khenshin_primary_dark">#580409</color> <!-- Color del status bar superior -->
+<color name="khenshin_primary_text">#ffffff</color> <!-- Color del texto en la barra de navegación -->
+<color name="khenshin_accent">#ca0814</color> <!-- Color de las decoraciones, por ejemplo barras de progreso -->
+```
     
 ## Vistas
 
