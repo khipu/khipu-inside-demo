@@ -65,4 +65,4 @@ STATUS: done
 
 ```sh
 > cd server/java/maven  
-> mvn compile && mvn exec:java -Dexec.mainClass="CreatePayment"
+> mvn compile && mvn exec:java -Dexec.mainClass="ValidatePayment"
