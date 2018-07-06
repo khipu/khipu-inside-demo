@@ -22,6 +22,7 @@ public class ValidatePayment {
         PaymentsResponse response = paymentsApi.paymentsGet(notificationToken);
 
         System.out.println("PAYMENT_ID: " + response.getPaymentId());
+        System.out.println("TRANSACTION_ID: " + response.getTransactionId());
         System.out.println("AMOUNT: " + response.getAmount());
         System.out.println("CURRENCY: " + response.getCurrency());
         System.out.println("STATUS: " + response.getStatus());

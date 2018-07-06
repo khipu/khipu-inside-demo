@@ -14,6 +14,7 @@ class ValidatePayment
   response = client.payments_get(File.read("../NOTIFICATION_TOKEN").strip)
 
   print "PAYMENT_ID: " + response.payment_id + "\n"
+  print "TRANSACTION_ID: " + response.transaction_id + "\n"
   print "AMOUNT: " +  response.amount.to_s + "\n"
   print "CURRENCY: " + response.currency + "\n"
   print "STATUS: " + response.status + "\n"

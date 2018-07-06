@@ -14,6 +14,7 @@ try {
     $response = $payments->paymentsGet($notificationToken);
 
     print "PAYMENT_ID: " . $response->getPaymentId() . "\n";
+    print "TRANSACTION_ID: " . $response->getTransactionId() . "\n";
     print "AMOUNT: " . $response->getAmount() . "\n";
     print "CURRENCY: " . $response->getCurrency() . "\n";
     print "STATUS: " . $response->getStatus() . "\n";

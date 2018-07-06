@@ -13,6 +13,7 @@ class CreatePayment
 
   response = client.payments_post('Pago de demo', 'CLP', 100, {
       notify_url: 'http://mi-ecomerce.com/backend/notify',
+      transaction_id: 'TX-1234',
   })
 
   print "PAYMENT_ID: " + response.payment_id + "\n"

@@ -19,7 +19,7 @@ compile 'com.khipu:khipu-api-client:2.7.7'
 </dependency>
 ```
 
-Para crear un pago se utiliza el método paymentsPost de la clase PaymentsApi. Los campos motivo, monto y moneda son obligatorios según la API y recomendamos fuertemente usar el campo notifyUrl para especificar en que endpoint Khipu notificará al servidor del cobrador cuando el pago esté conciliado y validado.
+Para crear un pago se utiliza el método paymentsPost de la clase PaymentsApi. Los campos motivo, monto y moneda son obligatorios según la API y recomendamos fuertemente usar el campo **notifyUrl** para especificar en que endpoint Khipu notificará al servidor del cobrador cuando el pago esté conciliado y el campo **transactionId** para asociar el pago a un identificador propio del negocio, por ejemplo número de orden.
 
 ```java
 Long receiverId = <ID de cobrador>;
@@ -32,6 +32,7 @@ paymentsApi.setApiClient(apiClient);
 
 Map<String, Object> options = new HashMap<>();
 options.put("notifyUrl", "http://mi-ecomerce.com/backend/notify");
+options.put("transactionId", "TX-1234");
 
 PaymentsCreateResponse response = paymentsApi.paymentsPost("Pago de demo" //Motivo de la compra
         , "CLP" //Moneda

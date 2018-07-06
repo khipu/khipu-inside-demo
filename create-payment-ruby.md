@@ -2,7 +2,8 @@
 
 El cliente se distribuye como la Gema [khipu-api-client](https://rubygems.org/gems/khipu-api-client), se recomienda usar [Bundler](https://bundler.io/) para manejar las dependencias.
 
-Para crear un pago se utiliza el método client.payments_post del objeto Khipu::PaymentsApi. Los campos motivo, monto y moneda son obligatorios según la API y recomendamos fuertemente usar el campo notify_url para especificar en que endpoint Khipu notificará al servidor del cobrador cuando el pago esté conciliado y validado.
+Para crear un pago se utiliza el método client.payments_post del objeto Khipu::PaymentsApi. Los campos motivo, monto y moneda son obligatorios según la API y recomendamos fuertemente usar el campo **notify_url** para especificar en que endpoint Khipu notificará al servidor del cobrador cuando el pago esté conciliado y el campo **transaction_id** para asociar el pago a un identificador propio del negocio, por ejemplo número de orden.
+
 
 ```ruby
 require 'khipu-api-client'
@@ -19,6 +20,7 @@ client = Khipu::PaymentsApi.new
 
 response = client.payments_post('Pago de demo', 'CLP', 100, {
 	notify_url: 'http://mi-ecomerce.com/backend/notify',
+	transaction_id: 'TX-1234',
 })
 
 print "PAYMENT_ID: " + response.payment_id + "\n"

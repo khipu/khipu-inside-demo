@@ -22,6 +22,7 @@ public class CreatePayment {
 
         Map<String, Object> options = new HashMap<>();
         options.put("notifyUrl", "https://micomercio.com/notify");
+        options.put("transactionId", "TX-1234");
 
         PaymentsCreateResponse response = paymentsApi.paymentsPost("Pago de demo" //Motivo de la compra
                 , "CLP" //Moneda

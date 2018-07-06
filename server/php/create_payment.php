@@ -12,6 +12,7 @@ $payments = new Khipu\Client\PaymentsApi($client);
 try {
     $ops = array(
         "notify_url" => "http://mi-ecomerce.com/backend/notify",
+        "transaction_id" => "TX-1234",
     );
     $response = $payments->paymentsPost('Pago de demo', 'CLP', 1000, $ops);
 
