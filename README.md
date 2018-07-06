@@ -75,6 +75,6 @@ Finalmente,
 
 En este repositorio se encuentran proyectos de ejemplo en:
 
-- Java (Gradle [ver documentación]() y Maven [ver documentación]())
-- Ruby [ver documentación]()
-- PHP [ver documentación]()
+- Java (Gradle y Maven) [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/validate-payment-java.md)
+- Ruby [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/validate-payment-ruby.md)
+- PHP [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/validate-payment-php.md)
