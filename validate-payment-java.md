@@ -66,3 +66,9 @@ STATUS: done
 ```sh
 > cd server/java/maven  
 > mvn compile && mvn exec:java -Dexec.mainClass="ValidatePayment"
+PAYMENT_ID: kht7s9utffa6
+TRANSACTION_ID: TX-1234
+AMOUNT: 100.0
+CURRENCY: CLP
+STATUS: done
+```
