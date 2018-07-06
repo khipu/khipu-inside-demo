@@ -1,4 +1,4 @@
-#Crear un pago utilizando el cliente PHP
+# Crear un pago utilizando el cliente PHP
 
 El cliente se distribuye como la bibloteca PHP [khipu-api-client](https://packagist.org/packages/khipu/khipu-api-client) y se instala usando [Composer](https://getcomposer.org/).
 
