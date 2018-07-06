@@ -12,6 +12,8 @@ Este repositorio es la documentación y ejemplo de como realizar una integració
 
 ## Esquema general
 
+![schema.png](schema.png)
+
 ## Pre-requisitos
 
 1. Tener una cuenta de cobrador en [khipu.com](khipu.com). Existen cuentas de cobro regulares y en "modo desarrollador", en ambas el ciclo de creación, autorización y conciliación del pago es idéntica. La diferencia es que en las cuentas regulares se utilizan Bancos y dinero real mientras en las en "modo desarrollador" ficticios. Recomendamos usar una cuenta en "modo desarrollador" en el proceso de desarrollo y pruebas de la integración y en producción cambiar las credenciales de acceso a la API por las de una cuenta regular.
@@ -44,9 +46,9 @@ Además de parámetros opcionales, como por ejemplo, el correo electrónico del 
 
 En este proyecto se encuentran ejemplos de implementaciones en:
 
-- Java (Gradle y Maven) [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/create-payment-java.md)
-- Ruby [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/create-payment-ruby.md)
-- PHP [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/create-payment-php.md)
+- Java (Gradle y Maven) [ver documentación](create-payment-java.md)
+- Ruby [ver documentación](create-payment-ruby.md)
+- PHP [ver documentación](create-payment-php.md)
 
 
 ## Autorización del pago en la App (en el dispositivo móvil del usuario)

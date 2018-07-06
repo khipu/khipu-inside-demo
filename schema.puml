@@ -1,0 +1,49 @@
+@startuml
+actor AppMovil as "App"
+participant Merchant as "Servidores Comercio"
+participant Khipu as "Servidores Khipu"
+participant BancoCliente as "Banco del pagador"
+participant BancoComercio as "Banco de recaudación"
+
+
+AppMovil -> AppMovil: Define condiciones del cobro
+
+AppMovil -> Merchant: Solicita pagar con khipu
+activate Merchant
+Merchant -> Khipu: Crea el cobro
+activate Khipu
+Merchant <-- Khipu: Entrega ID de pago
+deactivate Khipu
+AppMovil <-- Merchant: Entrega ID de pago
+deactivate Merchant
+
+AppMovil -> BancoCliente: Autoriza el pago usando Khipu Inside
+activate BancoCliente
+AppMovil <-- BancoCliente: Pago confirmado por banco del pagador
+deactivate BancoCliente
+AppMovil -> AppMovil: Mostrar: Pago en verificación
+
+... ...
+group Verificación de pago (proceso asíncrono)
+Khipu -> BancoComercio: Acredita fondos en cuenta corriente
+activate BancoComercio
+Khipu <-- BancoComercio: Resultado verificación
+deactivate BancoComercio
+Merchant  <- Khipu: Notifica resultado de pago (Token)
+activate Merchant
+Merchant  --> Khipu: Confirma recepción
+deactivate Merchant
+Merchant -> Khipu: Consulta resultado del pago (Token)
+activate Khipu
+Merchant <-- Khipu: Envía información del pago
+deactivate Khipu
+end
+... ...
+loop hasta confirmar conciliación
+AppMovil -> Merchant: Solicita estado de conciliación
+activate Merchant
+AppMovil <-- Merchant: Resultado conciliación
+deactivate Merchant
+end
+AppMovil -> AppMovil: Mostrar: Informa resultado pago
+@enduml
