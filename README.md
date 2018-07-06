@@ -63,8 +63,8 @@ Embeber khipu dentro de la App tiene tres etapas.
 
 En este repositorio se encuentran proyectos de ejemplo en:
 
-- Android (Java [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/authorize-payment-android.md))
-- iOS (ObjC [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/authorize-payment-objc.md) y Swift [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/authorize-payment-swift.md)).
+- Android (Java [ver documentación](authorize-payment-android.md))
+- iOS (ObjC [ver documentación](authorize-payment-objc.md) y Swift [ver documentación](authorize-payment-swift.md)).
 
 
 ## Recepción de la notificación de conciliación (en el servidor del cobrador)
@@ -77,6 +77,6 @@ Finalmente,
 
 En este repositorio se encuentran proyectos de ejemplo en:
 
-- Java (Gradle y Maven) [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/validate-payment-java.md)
-- Ruby [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/validate-payment-ruby.md)
-- PHP [ver documentación](https://github.com/khipu/khipu-inside-demo/blob/master/validate-payment-php.md)
+- Java (Gradle y Maven) [ver documentación](validate-payment-java.md)
+- Ruby [ver documentación](validate-payment-ruby.md)
+- PHP [ver documentación](validate-payment-php.md)
