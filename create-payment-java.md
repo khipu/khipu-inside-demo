@@ -1,7 +1,25 @@
 #Crear un pago utilizando el cliente Java
 
+El cliente se distribuye como el artefacto java [khipu-api-client](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.khipu%22%20AND%20a%3A%22khipu-api-client%22) y se recomienda utilizar gradle o maven.
 
-Para crear un pago se utiliza el método paymentsPost de la clase PaymentsApi
+**gradle**
+
+```gradle
+compile 'com.khipu:khipu-api-client:2.7.7'
+```
+
+
+**maven**
+
+```xml
+<dependency>
+    <groupId>com.khipu</groupId>
+    <artifactId>khipu-api-client</artifactId>
+    <version>2.7.7</version>
+</dependency>
+```
+
+Para crear un pago se utiliza el método paymentsPost de la clase PaymentsApi. Los campos motivo, monto y moneda son obligatorios según la API y recomendamos fuertemente usar el campo notifyUrl para especificar en que endpoint Khipu notificará al servidor del cobrador cuando el pago esté conciliado y validado.
 
 ```java
 Long receiverId = <ID de cobrador>;
@@ -13,6 +31,7 @@ PaymentsApi paymentsApi = new PaymentsApi();
 paymentsApi.setApiClient(apiClient);
 
 Map<String, Object> options = new HashMap<>();
+options.put("notifyUrl", "http://mi-ecomerce.com/backend/notify");
 
 PaymentsCreateResponse response = paymentsApi.paymentsPost("Pago de demo" //Motivo de la compra
         , "CLP" //Moneda
@@ -30,7 +49,7 @@ Se pueden ejecutar ejemplos usando gradle o maven
 
 ```sh
 > cd server/java/gradle  
-> ./gradlew run
+> ./gradlew -PmainClass=CreatePayment run
 
 Task :run  
 PAYMENT_ID: xxxxyyyyzzzz
@@ -40,7 +59,7 @@ PAYMENT_ID: xxxxyyyyzzzz
 
 ```sh
 > cd server/java/maven  
-> mvn exec:java
+> mvn compile && mvn exec:java -Dexec.mainClass="CreatePayment"
 
 [INFO] Scanning for projects...
 [INFO]

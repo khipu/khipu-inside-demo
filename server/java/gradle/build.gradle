@@ -18,4 +18,4 @@ dependencies {
 }
 
 apply plugin:'application'
-mainClassName = "Demo"
+mainClassName = project.hasProperty("mainClass") ? project.project.getProperty("mainClass") : "CreatePayment"

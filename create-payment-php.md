@@ -1,8 +1,8 @@
 #Crear un pago utilizando el cliente PHP
 
-El cliente se distribuye como una bibloteca PHP [khipu-api-client](https://packagist.org/packages/khipu/khipu-api-client) y se instala usando [Composer](https://getcomposer.org/).
+El cliente se distribuye como la bibloteca PHP [khipu-api-client](https://packagist.org/packages/khipu/khipu-api-client) y se instala usando [Composer](https://getcomposer.org/).
 
-Para crear un pago se utiliza el método paymentsPost del objeto Khipu\Client\PaymentsApi
+Para crear un pago se utiliza el método paymentsPost del objeto Khipu\Client\PaymentsApi. Los campos motivo, monto y moneda son obligatorios según la API y recomendamos fuertemente usar el campo notify_url para especificar en que endpoint Khipu notificará al servidor del cobrador cuando el pago esté conciliado y validado.
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
@@ -17,6 +17,7 @@ $payments = new Khipu\Client\PaymentsApi($client);
 
 try {
     $ops = array(
+    	"notify_url" => "http://mi-ecomerce.com/backend/notify",
     );
     $response = $payments->paymentsPost('Pago de demo', 'CLP', 1000, $ops);
 
@@ -48,7 +49,7 @@ Generating autoload files
 
 ```
 > cd server/php
-> php demo.php
+> php create_payment.php
 
 PAYMENT_ID: xxxxyyyyzzzz
 ```

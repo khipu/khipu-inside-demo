@@ -1,4 +1,4 @@
-class Demo
+class CreatePayment
   require 'khipu-api-client'
 
   Khipu.configure do |c|
@@ -12,6 +12,7 @@ class Demo
   client = Khipu::PaymentsApi.new
 
   response = client.payments_post('Pago de demo', 'CLP', 100, {
+      notify_url: 'http://mi-ecomerce.com/backend/notify',
   })
 
   print "PAYMENT_ID: " + response.payment_id + "\n"

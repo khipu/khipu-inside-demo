@@ -10,10 +10,10 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Demo {
+public class CreatePayment {
     public static void main(String[] args) throws ApiException, IOException {
-        Long receiverId = Long.parseLong(readSingleLineFile("../../RECEIVER_ID", Charset.defaultCharset()).trim()); //ID de cobrador
-        String secret = readSingleLineFile("../../SECRET", Charset.defaultCharset()).trim(); //llave secreta
+        Long receiverId = Long.parseLong(readSingleLineFile("../../RECEIVER_ID").trim()); //ID de cobrador
+        String secret = readSingleLineFile("../../SECRET").trim(); //llave secreta
 
         ApiClient apiClient = new ApiClient();
         apiClient.setKhipuCredentials(receiverId, secret);
@@ -21,6 +21,7 @@ public class Demo {
         paymentsApi.setApiClient(apiClient);
 
         Map<String, Object> options = new HashMap<>();
+        options.put("notifyUrl", "https://micomercio.com/notify");
 
         PaymentsCreateResponse response = paymentsApi.paymentsPost("Pago de demo" //Motivo de la compra
                 , "CLP" //Moneda
@@ -31,10 +32,10 @@ public class Demo {
         System.out.println("PAYMENT_ID: " + response.getPaymentId());
     }
 
-    static String readSingleLineFile(String path, Charset encoding)
+    static String readSingleLineFile(String path)
             throws IOException
     {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
-        return new String(encoded, encoding).trim();
+        return new String(encoded, Charset.defaultCharset()).trim();
     }
 }
