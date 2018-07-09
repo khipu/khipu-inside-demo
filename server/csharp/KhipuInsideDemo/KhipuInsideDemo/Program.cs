@@ -38,7 +38,6 @@ namespace KhipuInsideDemo
             Configuration.ReceiverId = Int32.Parse(File.ReadAllText("../../../../../RECEIVER_ID").Trim());
             PaymentsApi a = new PaymentsApi();
 
-            DateTime d = DateTime.Now;
             try
             {
                 PaymentsCreateResponse r = a.PaymentsPost("Pago de Demo", "CLP", 100, notifyUrl: "https://micomercio.com/notify", transactionId: "TX-1234");

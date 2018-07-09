@@ -49,6 +49,7 @@ En este proyecto se encuentran ejemplos de implementaciones en:
 - Java (Gradle y Maven) [ver documentación](create-payment-java.md)
 - Ruby [ver documentación](create-payment-ruby.md)
 - PHP [ver documentación](create-payment-php.md)
+- .NET (c#) [ver documentación](create-payment-csharp.md)
 
 
 ## Autorización del pago en la App (en el dispositivo móvil del usuario)
@@ -80,3 +81,4 @@ En este repositorio se encuentran proyectos de ejemplo en:
 - Java (Gradle y Maven) [ver documentación](validate-payment-java.md)
 - Ruby [ver documentación](validate-payment-ruby.md)
 - PHP [ver documentación](validate-payment-php.md)
+- .NET (c#) [ver documentación](validate-payment-csharp.md)
