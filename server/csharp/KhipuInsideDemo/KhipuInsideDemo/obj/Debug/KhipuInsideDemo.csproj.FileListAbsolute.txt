@@ -1,0 +1,12 @@
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\KhipuInsideDemo.exe.config
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\KhipuInsideDemo.exe
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\KhipuInsideDemo.pdb
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\Khipu.dll
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\Newtonsoft.Json.dll
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\RestSharp.dll
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\Khipu.xml
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\Newtonsoft.Json.xml
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\bin\Debug\RestSharp.xml
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\obj\Debug\KhipuInsideDemo.csprojResolveAssemblyReference.cache
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\obj\Debug\KhipuInsideDemo.exe
+C:\git\khipu-inside-demo\server\csharp\KhipuInsideDemo\KhipuInsideDemo\obj\Debug\KhipuInsideDemo.pdb
