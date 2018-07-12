@@ -2,6 +2,8 @@
 
 ## Introducción
 
+Prueba
+
 Khipu Chile es un medio de pago que opera en Chile. Permite a comercios cobrar electrónicamente y a clientes pagar con sus cuentas bancarias (Corrientes, Vistas, Chequeras electrónicas, etc.).
 
 El uso estándar de Khipu requiere que el cliente pagador instale una aplicación móvil, el terminal de pagos Khipu.
