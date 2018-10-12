@@ -11,6 +11,54 @@ Los pasos necesarios para utilizar la biblioteca nativa iOS para Browser2app son
 2. [Flags de compilación](#flags-de-compilación)
 3. [Inicialización de la biblioteca](#inicialización-de-la-biblioteca)
 4. [Invocar Khipu desde tu app](#invocar-khipu-desde-tu-app)
+
+## Tamaño de la biblioteca (cuanto afecta a tu aplicación)
+
+La biblioteca khenshin se distribuye como un Cocoapod Universal, es decir, que incluye versiones en las cuatro arquitecturas soportadas por iOS, tanto para simuladores como para dispositivos físicos.
+
+El tamaño de la biblioteca se detalla según la siguiente tabla dependiendo de la arquitectura en que se utilice.
+
+| Arquitectura | Tamaño |
+|--------------|--------:|
+|Arm64|12MB|
+|Armv7|11MB|
+|i386|11MB|
+|x86_64|11MB|
+
+khenshin utiliza, además, otras bibliotecas como dependencia, el tamaño final que agregará a tu aplicación depende del grado de duplicidad de esas bibliotecas. A modo de ejemplo. Una applicación vacía, que sólo utiliza khenshin y en una arquitectura determinada es de 32MB, es decir, el tamaño que khenshin agregará a tu aplicación varía entre 11 y 32MB dependiendo del grado de intersección de las bibliotecas utilizadas.
+
+Las bibliotecas que khenshin utiliza como dependencia son las siguientes:
+
+```
+PODS:
+  - ActionSheetPicker-3.0 (2.3.0)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BEMCheckBox (1.4.1)
+  - IQKeyboardManager (5.0.3)
+  - JSONModel (1.7.0)
+  - JVFloatLabeledTextField (1.2.1)
+  - PPTopMostController (0.0.1)
+  - RaptureXML (1.0.1)
+  - Toast (3.1.0)
+  - TTTAttributedLabel (2.0.0)
+```
+ 
+Es importante mencionar que el tamaño al que nos referimos en este documento corresponde al tamaño de la aplicación instalada, lo que el usuario debe descargar de Apple Store es siempre menor y depende de optimizaciones que haga Apple con la aplicación.
+ 
  
 ## Agregar cocoapod khenshin
 Para instalar khenshin en tu proyecto es necesario utilizar cocoapods, para eso se debe crear o modificar un archivo Podfile para que contenga la referencia al pod de khenshin.
