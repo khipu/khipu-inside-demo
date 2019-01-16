@@ -15,6 +15,8 @@
 		4A1AB8F720ED701800D0907D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1AB8F620ED701800D0907D /* main.m */; };
 		4A1AB90120ED701900D0907D /* Khipu_Inside_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1AB90020ED701900D0907D /* Khipu_Inside_DemoTests.m */; };
 		4A1AB90C20ED701900D0907D /* Khipu_Inside_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1AB90B20ED701900D0907D /* Khipu_Inside_DemoUITests.m */; };
+		4AFE18AC21EFAA6F00D03F84 /* PaymentProcessHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE18AB21EFAA6F00D03F84 /* PaymentProcessHeader.m */; };
+		4AFE18AE21EFAAD700D03F84 /* PaymentProcessHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AFE18AD21EFAAD700D03F84 /* PaymentProcessHeader.xib */; };
 		7824580F7B2D12942E9F564C /* Pods_Khipu_Inside_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221C77851E2E6A48AC45727A /* Pods_Khipu_Inside_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,9 @@
 		4A1AB90720ED701900D0907D /* Khipu Inside DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Khipu Inside DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A1AB90B20ED701900D0907D /* Khipu_Inside_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Khipu_Inside_DemoUITests.m; sourceTree = "<group>"; };
 		4A1AB90D20ED701900D0907D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AFE18AA21EFAA6F00D03F84 /* PaymentProcessHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentProcessHeader.h; sourceTree = "<group>"; };
+		4AFE18AB21EFAA6F00D03F84 /* PaymentProcessHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentProcessHeader.m; sourceTree = "<group>"; };
+		4AFE18AD21EFAAD700D03F84 /* PaymentProcessHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentProcessHeader.xib; sourceTree = "<group>"; };
 		78131C5F17A8E6ABFD491C25 /* Pods-Khipu Inside Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khipu Inside Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Khipu Inside Demo/Pods-Khipu Inside Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +131,9 @@
 				4A1AB8F220ED701800D0907D /* LaunchScreen.storyboard */,
 				4A1AB8F520ED701800D0907D /* Info.plist */,
 				4A1AB8F620ED701800D0907D /* main.m */,
+				4AFE18AA21EFAA6F00D03F84 /* PaymentProcessHeader.h */,
+				4AFE18AB21EFAA6F00D03F84 /* PaymentProcessHeader.m */,
+				4AFE18AD21EFAAD700D03F84 /* PaymentProcessHeader.xib */,
 			);
 			path = "Khipu Inside Demo";
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 				4A1AB8F420ED701800D0907D /* LaunchScreen.storyboard in Resources */,
 				4A1AB8F120ED701800D0907D /* Assets.xcassets in Resources */,
 				4A1AB8EF20ED701800D0907D /* Main.storyboard in Resources */,
+				4AFE18AE21EFAAD700D03F84 /* PaymentProcessHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +376,7 @@
 				4A1AB8EC20ED701800D0907D /* ViewController.m in Sources */,
 				4A1AB8F720ED701800D0907D /* main.m in Sources */,
 				4A1AB8E920ED701800D0907D /* AppDelegate.m in Sources */,
+				4AFE18AC21EFAA6F00D03F84 /* PaymentProcessHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

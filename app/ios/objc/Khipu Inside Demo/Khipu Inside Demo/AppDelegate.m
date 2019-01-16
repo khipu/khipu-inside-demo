@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <khenshin/khenshin.h>
+#import "PaymentProcessHeader.h"
+
 
 @interface AppDelegate ()
 
@@ -18,11 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    PaymentProcessHeader *processHeader = [[[NSBundle mainBundle] loadNibNamed:@"PaymentProcessHeader" owner:self options:nil] objectAtIndex:0];
+    
     [KhenshinInterface initWithBuilderBlock:^(KhenshinBuilder *builder) {
         builder.cerebroAPIURL = @"https://khipu.com/cerebro/";
         builder.automatonAPIURL = @"https://khipu.com/app/2.0";
         builder.mainButtonStyle = KHMainButtonFatOnForm;
         builder.barLeftSideLogo = [[UIImage alloc] init];
+        builder.processHeader = processHeader;
     }];
     return YES;
 }
