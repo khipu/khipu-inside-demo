@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PaymentProcessHeader" customModule="Khipu_Inside_Demo">
+            <rect key="frame" x="0.0" y="0.0" width="421" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqn-t8-MEo">
+                    <rect key="frame" x="8" y="8" width="405" height="54"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Bill Description Label">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Nqn-t8-MEo" secondAttribute="trailing" constant="8" id="8tN-B5-D5t"/>
+                <constraint firstAttribute="bottom" secondItem="Nqn-t8-MEo" secondAttribute="bottom" constant="8" id="Fle-yP-9FH"/>
+                <constraint firstItem="Nqn-t8-MEo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Gh7-DG-lb6"/>
+                <constraint firstItem="Nqn-t8-MEo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ecg-qE-ab7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="billDescriptionLabel" destination="Nqn-t8-MEo" id="uNm-Fl-Hv9"/>
+            </connections>
+        </view>
+    </objects>
+</document>

@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             builder?.automatonAPIURL = "https://khipu.com/app/2.0/"
             builder?.cerebroAPIURL = "https://khipu.com/cerebro/"
             builder?.barLeftSideLogo = UIImage.init()
+            builder?.processHeader = (Bundle.main.loadNibNamed("PaymentProcessHeader", owner: self, options: nil)?[0] as! UIView & ProcessHeader)
+            
+
         }
         
         return true
