@@ -16,7 +16,7 @@ Este repositorio es la documentación y ejemplo de como realizar una integració
 
 ## Pre-requisitos
 
-1. Tener una cuenta de cobrador en [khipu.com](khipu.com). Existen cuentas de cobro regulares y en "modo desarrollador", en ambas el ciclo de creación, autorización y conciliación del pago es idéntica. La diferencia es que en las cuentas regulares se utilizan Bancos y dinero real mientras en las en "modo desarrollador" ficticios. Recomendamos usar una cuenta en "modo desarrollador" en el proceso de desarrollo y pruebas de la integración y en producción cambiar las credenciales de acceso a la API por las de una cuenta regular.
+1. Tener una cuenta de cobrador en [khipu.com](https://khipu.com). Existen cuentas de cobro regulares y en "modo desarrollador", en ambas el ciclo de creación, autorización y conciliación del pago es idéntica. La diferencia es que en las cuentas regulares se utilizan Bancos y dinero real mientras en las en "modo desarrollador" ficticios. Recomendamos usar una cuenta en "modo desarrollador" en el proceso de desarrollo y pruebas de la integración y en producción cambiar las credenciales de acceso a la API por las de una cuenta regular.
 2. Un servidor capaz de conectarse por HTTPS a khipu.com y capaz de disponibilizar un endpoint web para recibir las notificaciones de conciliación de los pagos recibidos.
 3. Una aplicación móvil para Android o IOS. En este documento se asumirá que la aplicación es nativa, pero existen plugins y bridges para otras tecnologías como Cordova, React Native, etc.
 
