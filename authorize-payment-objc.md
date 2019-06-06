@@ -38,6 +38,8 @@ PODS:
     - AFNetworking/Security (= 3.1.0)
     - AFNetworking/Serialization (= 3.1.0)
     - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking-Synchronous/3.x (1.1.0):
+    - AFNetworking (~> 3.0)
   - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -48,9 +50,23 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - BEMCheckBox (1.4.1)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - IQKeyboardManager (5.0.3)
   - JSONModel (1.7.0)
-  - JVFloatLabeledTextField (1.2.1)
+  - khenshin (1.506):
+    - ActionSheetPicker-3.0 (= 2.3.0)
+    - AFNetworking (= 3.1.0)
+    - AFNetworking-Synchronous/3.x (= 1.1.0)
+    - BEMCheckBox (= 1.4.1)
+    - FMDB (= 2.7.5)
+    - IQKeyboardManager (= 5.0.3)
+    - JSONModel (= 1.7.0)
+    - PPTopMostController (= 0.0.1)
+    - RaptureXML (= 1.0.1)
+    - Toast (= 3.1.0)
+    - TTTAttributedLabel (= 2.0.0)
   - PPTopMostController (0.0.1)
   - RaptureXML (1.0.1)
   - Toast (3.1.0)
@@ -69,7 +85,7 @@ target 'Khipu Inside Demo' do
     use_frameworks!
 
     # Pods for Khipu Inside Demo
-    pod 'khenshin', :git => 'https://bitbucket.org/khipu/khenshin-pod.git', :tag => '1.298'
+    pod 'khenshin', :git => 'https://bitbucket.org/khipu/khenshin-pod.git', :tag => '1.506'
 end
 ```
 
@@ -80,16 +96,17 @@ Luego, para instalar el Pod se debe ejecutar *pod install* que descargará el po
 Analyzing dependencies
 Downloading dependencies
 Using AFNetworking (3.1.0)
+Using AFNetworking-Synchronous (1.1.0)
 Using ActionSheetPicker-3.0 (2.3.0)
 Using BEMCheckBox (1.4.1)
+Using FMDB (2.7.5)
 Using IQKeyboardManager (5.0.3)
 Using JSONModel (1.7.0)
-Using JVFloatLabeledTextField (1.2.1)
 Using PPTopMostController (0.0.1)
 Using RaptureXML (1.0.1)
 Using TTTAttributedLabel (2.0.0)
 Using Toast (3.1.0)
-Using khenshin (1.298)
+Using khenshin (1.506)
 Generating Pods project
 Integrating client project
 Sending stats
@@ -112,8 +129,7 @@ En el archivo *AppDelegate.m* debes inicializar **khenshin** en el selector *did
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [KhenshinInterface initWithBuilderBlock:^(KhenshinBuilder *builder) {
-        builder.cerebroAPIURL = @"https://khipu.com/cerebro/";
-        builder.automatonAPIURL = @"https://khipu.com/app/2.0";
+        builder.APIUrl = @"https://khipu.com/app/enc/";
         builder.mainButtonStyle = KHMainButtonFatOnForm;
         builder.barLeftSideLogo = [[UIImage alloc] init];
     }];

@@ -64,7 +64,7 @@ Embeber khipu dentro de la App tiene tres etapas.
 
 En este repositorio se encuentran proyectos de ejemplo en:
 
-- Android (Java [ver documentación](authorize-payment-android.md))
+- Android (Java [ver documentación](authorize-payment-java.md) y Kotlin [ver documentación](authorize-payment-kotlin.md)).
 - iOS (ObjC [ver documentación](authorize-payment-objc.md) y Swift [ver documentación](authorize-payment-swift.md)).
 
 

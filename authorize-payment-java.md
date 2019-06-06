@@ -18,23 +18,23 @@ Los pasos necesarios para utilizar la biblioteca nativa android para Browser2app
 
 La biblioteca khenshin se distribuye como un artefacto android (extensión .aar). En la versión actual (3.9.3) pesa 806 KB y referencia una lista de bibliotecas externas que en la medida que ya se estén utilizando no afectarían el tamaño de la aplicación.
 
-Es importante destacar que khenshin utiliza tres bibliotecas con código nativo y que se incluyen las versiones compiladas para todas las arquitecturas soportadas por Android. Es importante entonces utilizar la funcionalidad de Android que permite generar .apk por cada arquitectura (https://developer.android.com/studio/build/configure-apk-splits).
-
-A modo de ejemplo, una aplicación vacía, que sólo utiliza khenshin mide lo siguiente (por arquitectura).
-
-| Arquitectura | Tamaño |
-|--------------|--------:|
-|Arm64 V8|9.0MB|
-|Armeabi|8.5MB|
-|Armeabi V7a|8.5MB|
-|x86|9.2MB|
-|Universal (Todas las arquitecturas)|20.0MB|
+A modo de ejemplo, una aplicación vacía, que sólo utiliza khenshin pesa 5.8MB.
 
 El tamaño final que agregará khenshin a tu aplicación quedará determinado por la cantidad de bibliotecas repetidas e irá entre 800 KB y 9 MB en el caso que construyas un APK por arquitectura (recomendado) y entre 800 KB y 20 MB si sólo construyes un APK con todas las arquitecturas incluidas.
 
 Para que puedas estimar el grado de repetición de bibliotecas con las que ya usas en tu aplicación. Estas son todas las bibliotecas que khenshin usa:
 
 ```
++--- com.google.guava:guava:27.1-android
+|    +--- com.google.guava:failureaccess:1.0.1
+|    +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    +--- com.google.code.findbugs:jsr305:3.0.2
+|    +--- org.checkerframework:checker-compat-qual:2.5.2
+|    +--- com.google.errorprone:error_prone_annotations:2.2.0
+|    +--- com.google.j2objc:j2objc-annotations:1.1
+|    \--- org.codehaus.mojo:animal-sniffer-annotations:1.17
++--- com.android.support:exifinterface:27.1.1
+|    \--- com.android.support:support-annotations:27.1.1
 +--- com.android.support:appcompat-v7:27.1.1
 |    +--- com.android.support:support-annotations:27.1.1
 |    +--- com.android.support:support-core-utils:27.1.1
@@ -81,30 +81,32 @@ Para que puedas estimar el grado de repetición de bibliotecas con las que ya us
 |    \--- com.android.support:transition:27.1.1
 |         +--- com.android.support:support-annotations:27.1.1
 |         \--- com.android.support:support-compat:27.1.1 (*)
-+--- com.google.code.gson:gson:2.8.1
++--- com.google.code.gson:gson:2.8.2
 +--- com.squareup.retrofit2:retrofit:2.3.0
-|    \--- com.squareup.okhttp3:okhttp:3.8.0
-|         \--- com.squareup.okio:okio:1.13.0
-+--- com.squareup.picasso:picasso:2.5.2
+|    \--- com.squareup.okhttp3:okhttp:3.8.0 -> 3.10.0
+|         \--- com.squareup.okio:okio:1.14.0
++--- com.squareup.picasso:picasso:2.71828
+|    +--- com.squareup.okhttp3:okhttp:3.10.0 (*)
+|    +--- com.android.support:support-annotations:27.1.0 -> 27.1.1
+|    \--- com.android.support:exifinterface:27.1.0 -> 27.1.1 (*)
 +--- com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0
-|    +--- com.squareup.picasso:picasso:2.5.2
-|    \--- com.squareup.okhttp3:okhttp:3.4.1 -> 3.8.0 (*)
+|    +--- com.squareup.picasso:picasso:2.5.2 -> 2.71828 (*)
+|    \--- com.squareup.okhttp3:okhttp:3.4.1 -> 3.10.0 (*)
 +--- com.squareup.retrofit2:converter-gson:2.3.0
 |    +--- com.squareup.retrofit2:retrofit:2.3.0 (*)
-|    \--- com.google.code.gson:gson:2.7 -> 2.8.1
+|    \--- com.google.code.gson:gson:2.7 -> 2.8.2
 +--- com.squareup.retrofit2:converter-scalars:2.3.0
 |    \--- com.squareup.retrofit2:retrofit:2.3.0 (*)
 +--- com.squareup.okhttp3:okhttp-urlconnection:3.8.0
-|    \--- com.squareup.okhttp3:okhttp:3.8.0 (*)
+|    \--- com.squareup.okhttp3:okhttp:3.8.0 -> 3.10.0 (*)
 +--- pub.devrel:easypermissions:0.4.0
 |    \--- com.android.support:appcompat-v7:25.3.1 -> 27.1.1 (*)
 +--- com.squareup.okhttp3:logging-interceptor:3.8.0
-|    \--- com.squareup.okhttp3:okhttp:3.8.0 (*)
-+--- com.bottlerocketstudios:vault:1.4.0
+|    \--- com.squareup.okhttp3:okhttp:3.8.0 -> 3.10.0 (*)
++--- com.bottlerocketstudios:vault:1.4.2
 +--- com.sjl:dsl4xml:0.1.7
-+--- com.squareup.duktape:duktape-android:1.2.0
 +--- com.github.franmontiel:PersistentCookieJar:v1.0.1
-|    \--- com.squareup.okhttp3:okhttp:3.1.2 -> 3.8.0 (*)
+|    \--- com.squareup.okhttp3:okhttp:3.1.2 -> 3.10.0 (*)
 +--- info.hoang8f:android-segmented:1.0.6
 +--- com.facebook.fresco:animated-webp:1.9.0
 |    +--- com.parse.bolts:bolts-tasks:1.4.0
@@ -132,11 +134,67 @@ Para que puedas estimar el grado de repetición de bibliotecas con las que ya us
 |         |    \--- com.facebook.fresco:fbcore:1.9.0
 |         \--- com.parse.bolts:bolts-tasks:1.4.0
 +--- com.facebook.fresco:webpsupport:1.9.0 (*)
-\--- com.facebook.fresco:fresco:1.9.0
-     +--- com.facebook.fresco:fbcore:1.9.0
-     +--- com.facebook.fresco:drawee:1.9.0 (*)
-     +--- com.facebook.fresco:imagepipeline:1.9.0 (*)
-     \--- com.facebook.soloader:soloader:0.3.0
++--- com.facebook.fresco:fresco:1.9.0
+|    +--- com.facebook.fresco:fbcore:1.9.0
+|    +--- com.facebook.fresco:drawee:1.9.0 (*)
+|    +--- com.facebook.fresco:imagepipeline:1.9.0 (*)
+|    \--- com.facebook.soloader:soloader:0.3.0
++--- commons-codec:commons-codec:1.10
++--- com.google.guava:guava:27.1-android (*)
++--- com.google.guava:failureaccess:1.0.1
++--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
++--- com.google.code.findbugs:jsr305:3.0.2
++--- org.checkerframework:checker-compat-qual:2.5.2
++--- com.google.errorprone:error_prone_annotations:2.2.0
++--- com.google.j2objc:j2objc-annotations:1.1
++--- org.codehaus.mojo:animal-sniffer-annotations:1.17
++--- com.android.support:exifinterface:27.1.1 (*)
++--- com.android.support:support-annotations:27.1.1
++--- com.android.support:appcompat-v7:27.1.1 (*)
++--- com.android.support:support-core-utils:27.1.1 (*)
++--- com.android.support:support-compat:27.1.1 (*)
++--- android.arch.lifecycle:runtime:1.1.0 (*)
++--- android.arch.lifecycle:common:1.1.0
++--- android.arch.core:common:1.1.0
++--- com.android.support:support-fragment:27.1.1 (*)
++--- com.android.support:support-core-ui:27.1.1 (*)
++--- android.arch.lifecycle:livedata-core:1.1.0 (*)
++--- android.arch.core:runtime:1.1.0 (*)
++--- android.arch.lifecycle:viewmodel:1.1.0
++--- com.android.support:support-vector-drawable:27.1.1 (*)
++--- com.android.support:animated-vector-drawable:27.1.1 (*)
++--- com.android.support:design:27.1.1 (*)
++--- com.android.support:support-v4:27.1.1 (*)
++--- com.android.support:support-media-compat:27.1.1 (*)
++--- com.android.support:recyclerview-v7:27.1.1 (*)
++--- com.android.support:transition:27.1.1 (*)
++--- com.google.code.gson:gson:2.8.2
++--- com.squareup.retrofit2:retrofit:2.3.0 (*)
++--- com.squareup.okhttp3:okhttp:3.10.0 (*)
++--- com.squareup.okio:okio:1.14.0
++--- com.squareup.picasso:picasso:2.71828 (*)
++--- com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0 (*)
++--- com.squareup.retrofit2:converter-gson:2.3.0 (*)
++--- com.squareup.retrofit2:converter-scalars:2.3.0 (*)
++--- com.squareup.okhttp3:okhttp-urlconnection:3.8.0 (*)
++--- pub.devrel:easypermissions:0.4.0 (*)
++--- com.squareup.okhttp3:logging-interceptor:3.8.0 (*)
++--- com.bottlerocketstudios:vault:1.4.2
++--- com.sjl:dsl4xml:0.1.7
++--- com.github.franmontiel:PersistentCookieJar:v1.0.1 (*)
++--- info.hoang8f:android-segmented:1.0.6
++--- com.facebook.fresco:animated-webp:1.9.0 (*)
++--- com.parse.bolts:bolts-tasks:1.4.0
++--- com.facebook.fresco:webpsupport:1.9.0 (*)
++--- com.facebook.soloader:soloader:0.3.0
++--- com.facebook.fresco:fbcore:1.9.0
++--- com.facebook.fresco:imagepipeline-base:1.9.0 (*)
++--- com.facebook.fresco:animated-base:1.9.0 (*)
++--- com.facebook.fresco:imagepipeline:1.9.0 (*)
++--- com.facebook.fresco:animated-drawable:1.9.0 (*)
++--- com.facebook.fresco:drawee:1.9.0 (*)
++--- com.facebook.fresco:fresco:1.9.0 (*)
+\--- commons-codec:commons-codec:1.10
 ```
 
 Es importante mencionar que el tamaño al que nos referimos en este documento corresponde al tamaño de la aplicación instalada, lo que el usuario debe descargar de Google Play es siempre menor y depende de optimizaciones que haga Google con el .apk
@@ -168,7 +226,7 @@ Los campos khenshinRepoUsername y khenshinRepoPassword te serán proporcionados 
 Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
 
 ```gradle
-compile 'com.browser2app:khenshin:3.9.3'
+compile 'com.browser2app:khenshin:5.0.3'
 ```   
     
 ## Clase de tu aplicación
@@ -183,8 +241,7 @@ public class Demo extends Application implements KhenshinApplication {
     public Demo(){
         khenshin = new Khenshin.KhenshinBuilder()
                 .setApplication(this)
-                .setTaskAPIUrl("https://khipu.com/app/2.0/")
-                .setDumpAPIUrl("https://khipu.com/cerebro/")
+                .setAPIUrl("https://khipu.com/app/enc/")
                 .build();
     }
 
