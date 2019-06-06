@@ -24,8 +24,7 @@
     PaymentProcessHeader *processHeader = [[[NSBundle mainBundle] loadNibNamed:@"PaymentProcessHeader" owner:self options:nil] objectAtIndex:0];
     
     [KhenshinInterface initWithBuilderBlock:^(KhenshinBuilder *builder) {
-        builder.cerebroAPIURL = @"https://khipu.com/cerebro/";
-        builder.automatonAPIURL = @"https://khipu.com/app/2.0";
+        builder.APIUrl = @"https://khipu.com/app/enc/";
         builder.mainButtonStyle = KHMainButtonFatOnForm;
         builder.barLeftSideLogo = [[UIImage alloc] init];
         builder.processHeader = processHeader;

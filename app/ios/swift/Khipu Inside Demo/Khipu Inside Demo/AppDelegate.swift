@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         KhenshinInterface.initWithBuilderBlock {(builder: KhenshinBuilder?) -> Void in
             NSLog("init")
-            builder?.automatonAPIURL = "https://khipu.com/app/2.0/"
-            builder?.cerebroAPIURL = "https://khipu.com/cerebro/"
+            builder?.apiUrl = "https://khipu.com/app/enc/"
             builder?.barLeftSideLogo = UIImage.init()
             builder?.processHeader = (Bundle.main.loadNibNamed("PaymentProcessHeader", owner: self, options: nil)?[0] as! UIView & ProcessHeader)
             
