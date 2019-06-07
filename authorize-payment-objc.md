@@ -85,7 +85,7 @@ target 'Khipu Inside Demo' do
     use_frameworks!
 
     # Pods for Khipu Inside Demo
-    pod 'khenshin', :git => 'https://bitbucket.org/khipu/khenshin-pod.git', :tag => '1.506'
+    pod 'khenshin', :git => 'https://bitbucket.org/khipu/khenshin-pod.git', :tag => '1.508'
 end
 ```
 
@@ -106,7 +106,7 @@ Using PPTopMostController (0.0.1)
 Using RaptureXML (1.0.1)
 Using TTTAttributedLabel (2.0.0)
 Using Toast (3.1.0)
-Using khenshin (1.506)
+Using khenshin (1.508)
 Generating Pods project
 Integrating client project
 Sending stats
