@@ -2,7 +2,7 @@
 
 La biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un Cocoapod. Para poder utilizarlo en tu App debes contar con acceso a nuestro repositorio privado: https://bitbucket.org/khipu/khenshin-pod.git
 
-En este repositorio se encuentra una App de demostración en la carpeta [app/ios/objc](https://github.com/khipu/khipu-inside-demo/tree/master/app/ios/objc) . Para ejecutarla se debe abrir con Android Studio o IntelliJ
+En este repositorio se encuentra una App de demostración en la carpeta [app/ios/objc](https://github.com/khipu/khipu-inside-demo/tree/master/app/ios/objc) . Para ejecutarla se debe abrir con XCode.
 
 Los pasos necesarios para utilizar la biblioteca nativa iOS para Browser2app son:
 
@@ -154,3 +154,6 @@ Para invocar Khipu se utiliza el método *startEngineWithPaymentExternalId* de l
     }
                                                animated:NO];
 ```
+
+
+Recordar que siempre se debe esperar la notificación por API de khipu para considerar que un pago aprobado. Como se explican en [la documentación del proceso de pago](README.md).

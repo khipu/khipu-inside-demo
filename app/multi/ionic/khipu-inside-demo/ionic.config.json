@@ -1,0 +1,7 @@
+{
+  "name": "Khipu Inside Demo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
