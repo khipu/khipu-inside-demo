@@ -66,7 +66,7 @@ En este repositorio se encuentran proyectos de ejemplo en:
 
 - Android (Java [ver documentación](authorize-payment-java.md) y Kotlin [ver documentación](authorize-payment-kotlin.md)).
 - iOS (ObjC [ver documentación](authorize-payment-objc.md) y Swift [ver documentación](authorize-payment-swift.md)).
-
+- Multi-plataforma (ionic/cordova [ver documentacion](authorize-payment-ionic.md)).
 
 ## Recepción de la notificación de conciliación (en el servidor del cobrador)
 
