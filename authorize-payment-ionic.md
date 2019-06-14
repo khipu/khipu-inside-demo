@@ -66,7 +66,7 @@ Installing dependencies may take several minutes.
 
 ## Plataformas
 
-Puedes agregar las plataformas ios y android a tu proyecto. (Recomendamos usar, al menos, cordova-ionic 5.0.1)
+Puedes agregar las plataformas ios y android a tu proyecto. (Recomendamos usar, al menos, cordova-ios 5.0.1 y cordova-android 8.0.0)
 
 ```bash
 PROMPT> ionic cordova platform add ios@5.0.1
@@ -83,11 +83,11 @@ Al 7 de Junio de 2019, es necesario sobreescribir el parámetro target -> build 
 
 
 ```bash
-PROMPT> ionic cordova platform add android
+PROMPT> ionic cordova platform add android@8.0.0
 
 
 > cordova platform add android --save
-Using cordova-fetch for cordova-android@~7.1.1
+Using cordova-fetch for cordova-android@8.0.0
 Adding android project...
 Creating Cordova project for the Android platform:
 	Path: platforms/android
@@ -95,9 +95,11 @@ Creating Cordova project for the Android platform:
 	Name: MyApp
 	Activity: MainActivity
 	Android target: android-27
-Android project created with cordova-android@7.1.4
+Android project created with cordova-android@8.0.0
 ...
 ```
+
+Al 14 de Junio de 2019, es necesario actualizar la versión de gradle que ua
 
 ## Plugin
 
