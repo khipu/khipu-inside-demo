@@ -1,8 +1,8 @@
 # Autorizar el pago en una aplicación Ionic
 
-Para Android, la biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un artefacto android privado. Para poder utilizarlo en tu App debes contar con acceso a nuestro repositorio privado: https://dev.khipu.com/nexus/content/repositories/browser2app.
+Para Android, la biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un artefacto android.
 
-Para iOS, la biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un Cocoapod. Para poder utilizarlo en tu App debes contar con acceso a nuestro repositorio privado: https://bitbucket.org/khipu/khenshin-pod.git
+Para iOS, la biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un Cocoapod.
 
 En este repositorio se encuentra una App de demostración en la carpeta [app/multi/ionic](https://github.com/khipu/khipu-inside-demo/tree/master/app/multi/ionic) . Para ejecutarla debes tener ionic instalado.
 

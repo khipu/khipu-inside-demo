@@ -1,6 +1,6 @@
 # Autorizar el pago en una aplicación Android
 
-La biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un artefacto android privado. Para poder utilizarlo en tu App debes contar con acceso a nuestro repositorio privado: https://dev.khipu.com/nexus/content/repositories/browser2app.
+La biblioteca de Khipu Inside se llama **khenshin**.
 
 En este repositorio se encuentra una App de demostración en la carpeta [app/android/java](https://github.com/khipu/khipu-inside-demo/tree/master/app/android/java) . Para ejecutarla se debe abrir con Android Studio o IntelliJ
 
@@ -16,7 +16,7 @@ Los pasos necesarios para utilizar la biblioteca nativa android para Browser2app
 
 ## Tamaño de la biblioteca (cuanto afecta a tu aplicación)
 
-La biblioteca khenshin se distribuye como un artefacto android (extensión .aar). En la versión actual (3.9.3) pesa 806 KB y referencia una lista de bibliotecas externas que en la medida que ya se estén utilizando no afectarían el tamaño de la aplicación.
+La biblioteca khenshin se distribuye como un artefacto android (extensión .aar). En la versión actual (5.0.5) pesa 806 KB y referencia una lista de bibliotecas externas que en la medida que ya se estén utilizando no afectarían el tamaño de la aplicación.
 
 A modo de ejemplo, una aplicación vacía, que sólo utiliza khenshin pesa 5.8MB.
 
@@ -202,31 +202,24 @@ Es importante mencionar que el tamaño al que nos referimos en este documento co
 
 ## Repositorios
 
-Se debe incluir el [repositorio maven de khenshin](https://dev.khipu.com/nexus/content/repositories/browser2app) así como jcenter
+Se debe incluir el [repositorio maven de khenshin](https://dev.khipu.com/nexus/content/repositories/khenshin) así como jcenter
 
 ```gradle
 allprojects {
 	repositories {
+	    google()
 		jcenter()
-		maven {
-			url 'https://dev.khipu.com/nexus/content/repositories/browser2app'
-			credentials {
-				username khenshinRepoUsername
-				password khenshinRepoPassword
-			}
-		}
+		maven { url 'https://dev.khipu.com/nexus/content/repositories/khenshin' }
 	}
 }
 ```	
-
-Los campos khenshinRepoUsername y khenshinRepoPassword te serán proporcionados por tu ejecutivo Khipu, se deben incluir en el archivo gradle.properties en la raiz del proyecto y sin incluir al sistema de control de versiones.
 
 ## Dependencias
 
 Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
 
 ```gradle
-compile 'com.browser2app:khenshin:5.0.3'
+compile 'com.browser2app:khenshin:5.0.5'
 ```   
     
 ## Clase de tu aplicación
