@@ -1,6 +1,6 @@
 # Autorizar el pago en una aplicación iOS (Swift)
 
-La biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un Cocoapod. Para poder utilizarlo en tu App debes contar con acceso a nuestro repositorio privado: https://bitbucket.org/khipu/khenshin-pod.git
+La biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un Cocoapod.
 
 En este repositorio se encuentra una App de demostración en la carpeta [app/ios/swift](https://github.com/khipu/khipu-inside-demo/tree/master/app/ios/swift) . Para ejecutarla se debe abrir con Android Studio o IntelliJ
 
@@ -32,6 +32,8 @@ Las bibliotecas que khenshin utiliza como dependencia son las siguientes:
 ```
 PODS:
   - ActionSheetPicker-3.0 (2.3.0)
+  - AFNetworkActivityLogger (3.0.0):
+    - AFNetworking/NSURLSession (~> 3.0)
   - AFNetworking (3.1.0):
     - AFNetworking/NSURLSession (= 3.1.0)
     - AFNetworking/Reachability (= 3.1.0)
@@ -55,8 +57,9 @@ PODS:
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (5.0.3)
   - JSONModel (1.7.0)
-  - khenshin (1.506):
+  - khenshin (1.512):
     - ActionSheetPicker-3.0 (= 2.3.0)
+    - AFNetworkActivityLogger (= 3.0.0)
     - AFNetworking (= 3.1.0)
     - AFNetworking-Synchronous/3.x (= 1.1.0)
     - BEMCheckBox (= 1.4.1)
@@ -84,7 +87,7 @@ target 'Khipu Inside Demo' do
     use_frameworks!
 
     # Pods for Khipu Inside Demo
-    pod 'khenshin', :git => 'https://bitbucket.org/khipu/khenshin-pod.git', :tag => '1.508'
+    pod 'khenshin', :git => 'git@github.com:khipu/khenshin-pod.git', :tag => '1.512'
 end
 ```
 
@@ -94,6 +97,7 @@ Luego, para instalar el Pod se debe ejecutar *pod install* que descargará el po
 > pod install
 Analyzing dependencies
 Downloading dependencies
+Using AFNetworkActivityLogger (3.0.0)
 Using AFNetworking (3.1.0)
 Using AFNetworking-Synchronous (1.1.0)
 Using ActionSheetPicker-3.0 (2.3.0)
@@ -105,7 +109,7 @@ Using PPTopMostController (0.0.1)
 Using RaptureXML (1.0.1)
 Using TTTAttributedLabel (2.0.0)
 Using Toast (3.1.0)
-Using khenshin (1.508)
+Using khenshin (1.512)
 Generating Pods project
 Integrating client project
 Sending stats
