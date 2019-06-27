@@ -87,7 +87,7 @@ target 'Khipu Inside Demo' do
     use_frameworks!
 
     # Pods for Khipu Inside Demo
-    pod 'khenshin', :git => 'git@github.com:khipu/khenshin-pod.git', :tag => '1.512'
+    pod 'khenshin', :git => 'https://github.com/khipu/khenshin-pod.git', :tag => '1.512'
 end
 ```
 
