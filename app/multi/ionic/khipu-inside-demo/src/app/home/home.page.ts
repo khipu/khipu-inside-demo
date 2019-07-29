@@ -13,5 +13,3 @@ export class HomePage {
     khenshin.startByPaymentId('aiukpuwrhjte', success => console.log(success), err => console.log(err));
   }
 }
-
-

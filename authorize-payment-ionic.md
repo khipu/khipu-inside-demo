@@ -1,5 +1,7 @@
 # Autorizar el pago en una aplicación Ionic
 
+Este documento asume Ionic 4 con Cordova 9.
+
 Para Android, la biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un artefacto android.
 
 Para iOS, la biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un Cocoapod.
@@ -8,35 +10,14 @@ En este repositorio se encuentra una App de demostración en la carpeta [app/mul
 
 Los pasos necesarios para utilizar el plugin cordova para Ionic en android e iOS para Browser2app son:
 
-0. [Agregar las credenciales para usar Khipu Inside](#credenciales)
 1. [Crear un proyecto Ionic](#proyecto)
 2. [Agregar las plataformas](#plataformas)
 3. [Agregar el plugin cordova](#plugin)
 4. [Invocar khipu desde tu app](#invocación)
 
-#Credenciales
-
-##Android
-
-Debes [solicitar en Khipu](mailto:soporte@khipu.com) tu usuario y contraseña para el repositorio de artefactos java. Con estos debes crear un archivo gradle.properties que debes alojar en ~/.gradle/gradle.properties donde definas las variables khenshinRepoUsername y khenshinRepoPassword.
-
-```bash
-PROMPT> cat ~/.gradle/gradle.properties
-
-khenshinRepoUsername=<Nombre de usuario entregado>
-khenshinRepoPassword=<Password entregado>
-```
-   
-##iOS
-
-Debes tener un usuario bitbucket.org y [solicitar en Khipu](mailto:soporte@khipu.com) que le den acceso a ese usuario al repositorio de los pods de Khipu Inside.
-
-Luego debes crear un par de llaves ssh publica y privada que se alojen en ~/.ssh/ y debes confiurar tu cuenta bitbucket.org para poder acceder con tu llave ssh.
-    
-    
 ## Proyecto
 
-Para crear un proyecto Ionic debes ejecutar "ionic start" y constestar las preguntas que te haga:
+Para crear un proyecto Ionic 4 (con cordova 9) debes ejecutar "ionic start" y constestar las preguntas que te haga:
 
 ```bash
 PROMPT> ionic start
@@ -98,8 +79,6 @@ Creating Cordova project for the Android platform:
 Android project created with cordova-android@8.0.0
 ...
 ```
-
-Al 14 de Junio de 2019, es necesario actualizar la versión de gradle que ua
 
 ## Plugin
 
