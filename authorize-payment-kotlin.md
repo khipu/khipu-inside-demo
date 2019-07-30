@@ -259,6 +259,8 @@ En tu proyecto puedes determinar los colores que usará Khenshin en las pantalla
 
 Para personalizar más aún la visualización de Khenshin puedes sobreescribir archivos de layout que se utilizan en el proceso de pago.
 
+Una vez importado khenshin al proyecto se pueden buscar los archivos khenshin_*.xml dentro de res/src/layout de la biblioteca khenshin-<Version>.aar, todos esos layout se pueden sobre escribir en el proyecto final y para esto basta crear un archivo con el mismo nombre en res/src/layout.  
+
     
 ## Invocación
 
