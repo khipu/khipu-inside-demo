@@ -15,10 +15,13 @@ class PaymentProcessHeader: UIView, ProcessHeader {
     @IBOutlet weak var billDescriptionLabel: UILabel!
     
     func configure(withSubject subject: String!, formattedAmountAsCurrency amount: String!, merchantName: String!, merchantImageURL: String!, paymentMethod: String!) {
-        let paying = NSMutableAttributedString(string: String(format: "Pagando %@ a \"%@\" por %@.\rUsando %@", amount, merchantName, subject, paymentMethod))
         
+        var paying = String(format: "Pagando %@ a \"%@\" por %@.", amount, merchantName, subject)
+        if(paymentMethod != nil) {
+            paying = String(format: "\n%@ Usando %@.", paying, paymentMethod)
+        }
         
-        billDescriptionLabel.attributedText = paying
+        billDescriptionLabel.attributedText = NSMutableAttributedString(string: paying)
     }
     
     
