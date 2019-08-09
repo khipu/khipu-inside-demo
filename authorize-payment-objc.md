@@ -57,7 +57,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (5.0.3)
   - JSONModel (1.7.0)
-  - khenshin (1.512):
+  - khenshin (1.548):
     - ActionSheetPicker-3.0 (= 2.3.0)
     - AFNetworkActivityLogger (= 3.0.0)
     - AFNetworking (= 3.1.0)
@@ -68,7 +68,6 @@ PODS:
     - JSONModel (= 1.7.0)
     - PPTopMostController (= 0.0.1)
     - RaptureXML (= 1.0.1)
-    - Toast (= 3.1.0)
     - TTTAttributedLabel (= 2.0.0)
   - PPTopMostController (0.0.1)
   - RaptureXML (1.0.1)
@@ -88,7 +87,7 @@ target 'Khipu Inside Demo' do
     use_frameworks!
 
     # Pods for Khipu Inside Demo
-    pod 'khenshin', :git => 'https://github.com/khipu/khenshin-pod.git', :tag => '1.512'
+    pod 'khenshin', :git => 'https://github.com/khipu/khenshin-pod.git', :tag => '1.548'
 end
 ```
 
@@ -110,7 +109,7 @@ Using PPTopMostController (0.0.1)
 Using RaptureXML (1.0.1)
 Using TTTAttributedLabel (2.0.0)
 Using Toast (3.1.0)
-Using khenshin (1.512)
+Using khenshin (1.548)
 Generating Pods project
 Integrating client project
 Sending stats

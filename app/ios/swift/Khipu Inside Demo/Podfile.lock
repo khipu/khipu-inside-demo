@@ -25,7 +25,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (5.0.3)
   - JSONModel (1.7.0)
-  - khenshin (1.512):
+  - khenshin (1.548):
     - ActionSheetPicker-3.0 (= 2.3.0)
     - AFNetworkActivityLogger (= 3.0.0)
     - AFNetworking (= 3.1.0)
@@ -36,15 +36,13 @@ PODS:
     - JSONModel (= 1.7.0)
     - PPTopMostController (= 0.0.1)
     - RaptureXML (= 1.0.1)
-    - Toast (= 3.1.0)
     - TTTAttributedLabel (= 2.0.0)
   - PPTopMostController (0.0.1)
   - RaptureXML (1.0.1)
-  - Toast (3.1.0)
   - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
-  - khenshin (from `https://github.com/khipu/khenshin-pod.git`, tag `1.512`)
+  - khenshin (from `https://github.com/khipu/khenshin-pod.git`, tag `1.548`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -58,18 +56,17 @@ SPEC REPOS:
     - JSONModel
     - PPTopMostController
     - RaptureXML
-    - Toast
     - TTTAttributedLabel
 
 EXTERNAL SOURCES:
   khenshin:
     :git: https://github.com/khipu/khenshin-pod.git
-    :tag: '1.512'
+    :tag: '1.548'
 
 CHECKOUT OPTIONS:
   khenshin:
     :git: https://github.com/khipu/khenshin-pod.git
-    :tag: '1.512'
+    :tag: '1.548'
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
@@ -80,12 +77,11 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: dc5b18b47e5170e4d150bb86dbee8c8a2fc48997
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
-  khenshin: 255a4573b2f7617c469caea52666b82526800396
+  khenshin: 073e74731388ce25583f6a34cdeb8ad6781e5e84
   PPTopMostController: 4e6f1e5f8c645bdcc74cd837a20f607ff262c048
   RaptureXML: b5c33c04c1a4adfd8ad0d5463329a31820596e82
-  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 6428cc12f4807c598e5e7d966fd78bf16634b0e7
+PODFILE CHECKSUM: 0beffecb7b00c62729e47c3f4761538a60edbb10
 
 COCOAPODS: 1.7.2
