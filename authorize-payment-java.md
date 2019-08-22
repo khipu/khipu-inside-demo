@@ -16,7 +16,7 @@ Los pasos necesarios para utilizar la biblioteca nativa android para Browser2app
 
 ## Tamaño de la biblioteca (cuanto afecta a tu aplicación)
 
-La biblioteca khenshin se distribuye como un artefacto android (extensión .aar). En la versión actual (5.0.5) pesa 806 KB y referencia una lista de bibliotecas externas que en la medida que ya se estén utilizando no afectarían el tamaño de la aplicación.
+La biblioteca khenshin se distribuye como un artefacto android (extensión .aar). En la versión actual (5.1.9) pesa 806 KB y referencia una lista de bibliotecas externas que en la medida que ya se estén utilizando no afectarían el tamaño de la aplicación.
 
 A modo de ejemplo, una aplicación vacía, que sólo utiliza khenshin pesa 5.8MB.
 
@@ -219,7 +219,7 @@ allprojects {
 Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
 
 ```gradle
-compile 'com.browser2app:khenshin:5.0.5'
+compile 'com.browser2app:khenshin:5.1.9'
 ```   
     
 ## Clase de tu aplicación
