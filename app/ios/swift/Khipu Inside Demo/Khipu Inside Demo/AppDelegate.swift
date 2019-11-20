@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             builder?.apiUrl = "https://khipu.com/app/enc/"
             builder?.barLeftSideLogo = UIImage.init()
             builder?.processHeader = (Bundle.main.loadNibNamed("PaymentProcessHeader", owner: self, options: nil)?[0] as! UIView & ProcessHeader)
-            
+            builder?.principalColor = UIColor.blue
 
         }
         
