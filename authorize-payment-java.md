@@ -9,9 +9,10 @@ Los pasos necesarios para utilizar la biblioteca nativa android para Browser2app
 1. [Agregar los repositorios](#repositorios)
 2. [Agregar las dependencias](#dependencias)
 3. [Modificar la clase base de tu app](#clase-de-tu-aplicación)
-4. [Configurar colores](#colores) y [vistas del proceso](#vistas)
-5. [Invocar browser2app desde tu app](#invocación)
-6. [Recibir la respuesta en tu app](#respuesta)
+4. [Parámetros de inicialización de khenshin](#parametros-de-inicializacion-de-khenshin)
+5. [Configurar colores](#colores) y [vistas del proceso](#vistas)
+6. [Invocar browser2app desde tu app](#invocación)
+7. [Recibir la respuesta en tu app](#respuesta)
 
 
 ## Tamaño de la biblioteca (cuanto afecta a tu aplicación)
@@ -243,7 +244,61 @@ public class Demo extends Application implements KhenshinApplication {
         return khenshin;
     }
 }
-```	
+```
+
+## Parámetros de inicialización de khenshin
+
+En el párrafo anterior se utilizó la construcción minimal de khenshin, a continuación veremos todos los parámetros opcionales.
+
+```java
+
+            khenshin = new Khenshin.KhenshinBuilder()
+                    #obligatorios
+                    .setApplication(this) 
+                    .setAPIUrl("https://khipu.com/app/enc/")
+
+                    # Opcionales
+                    # Estilo del botón continuar, puede ser:
+                    # - Khenshin.CONTINUE_BUTTON_IN_FORM: Dentro de cada formulario, al final de todos los campos
+                    # - Khenshin.CONTINUE_BUTTON_IN_TOOLBAR: En la barra de herramientas (arriba a la derecha), opción pre-determinada
+                    # - Khenshin.CONTINUE_BUTTON_IN_KEYBOARD: Incluido en el teclado del teléfono
+                    .setMainButtonStyle(Khenshin.CONTINUE_BUTTON_IN_FORM)
+    
+                    # Permitir guardar credenciales bancarias en el dispositivo móvil, pre-determinado: no
+                    .setAllowCredentialsSaving(true)
+        
+                    # Esconder la barra de navegación tipo browser en las páginas de pago, pre-determinado: no
+                    .setHideWebAddressInformationInForm(true)
+                
+                    # Esconder la última página (éxito o fracaso del proceso de pago), pre-determinado: no
+                    .setSkipExitPage(true)
+
+                    # Esconder los mensajes de progreso entre etapas, se recomienda usar con un indicador de progeso personalizado, pre-determinado: no
+                    .setHideProgressDialogInTransition(true)
+
+                    # Indicador de progreso personalizado, puede ser un GIF animado o un Webp animado, pre-determinado: nulo
+                    .setProgressAnimationResourceId(R.id.id_de_recurso)
+
+                    # Separador de decimales a utilizar, pre-determinado: el del locale del dispositivo
+                    .setDecimalSeparator(',')
+
+                    # Separador de miles a utilizar, pre-determinado: el del locale del dispositivo
+                    .setGroupingSeparator('.')
+
+                    # Limpiar las cookies del nagevador antes de comenzar un pago, pre-determinado: no
+                    .setClearCookiesBeforeStart(true)
+
+                    # Enviar automáticamente los formularios para los que ya están definidos todos los valores, pre-determinado: no
+                    .setAutoSubmitIfComplete(true)
+
+                    # Tipo de letra personalizado para usar en todos los formularios, ver: https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml
+                    .setFontResourceId(R.font.mi_fuente_de_letra)
+
+                    .build();
+
+```
+
+
 
 
 ## Colores
