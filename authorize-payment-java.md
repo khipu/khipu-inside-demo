@@ -9,7 +9,7 @@ Los pasos necesarios para utilizar la biblioteca nativa android para Browser2app
 1. [Agregar los repositorios](#repositorios)
 2. [Agregar las dependencias](#dependencias)
 3. [Modificar la clase base de tu app](#clase-de-tu-aplicación)
-4. [Parámetros de inicialización de khenshin](#parametros-de-inicializacion-de-khenshin)
+4. [Parámetros de inicialización de khenshin](#parámetros-de-inicialización-de-khenshin)
 5. [Configurar colores](#colores) y [vistas del proceso](#vistas)
 6. [Invocar browser2app desde tu app](#invocación)
 7. [Recibir la respuesta en tu app](#respuesta)
