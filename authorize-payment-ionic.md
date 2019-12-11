@@ -8,7 +8,7 @@ Para iOS, la biblioteca de Khipu Inside se llama **khenshin** y se distribuye co
 
 En este repositorio se encuentra una App de demostración en la carpeta [app/multi/ionic](https://github.com/khipu/khipu-inside-demo/tree/master/app/multi/ionic) . Para ejecutarla debes tener ionic instalado.
 
-Los pasos necesarios para utilizar el plugin cordova para Ionic en android e iOS para Browser2app son:
+Los pasos necesarios para utilizar el plugin cordova para Ionic en android e iOS para B2app son:
 
 1. [Crear un proyecto Ionic](#proyecto)
 2. [Agregar las plataformas](#plataformas)

@@ -4,7 +4,7 @@ La biblioteca de Khipu Inside se llama **khenshin** y se distribuye como un Coco
 
 En este repositorio se encuentra una App de demostración en la carpeta [app/ios/objc](https://github.com/khipu/khipu-inside-demo/tree/master/app/ios/objc) . Para ejecutarla se debe abrir con XCode.
 
-Los pasos necesarios para utilizar la biblioteca nativa iOS para Browser2app son:
+Los pasos necesarios para utilizar la biblioteca nativa iOS para B2app son:
 
 
 1. [Agregar cocoapod khenshin](#agregar-cocoapod-khenshin)
