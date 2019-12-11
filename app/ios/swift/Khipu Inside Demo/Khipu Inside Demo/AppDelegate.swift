@@ -19,12 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         KhenshinInterface.initWithBuilderBlock {(builder: KhenshinBuilder?) -> Void in
-            NSLog("init")
             builder?.apiUrl = "https://khipu.com/app/enc/"
-            builder?.barLeftSideLogo = UIImage.init()
-            builder?.processHeader = (Bundle.main.loadNibNamed("PaymentProcessHeader", owner: self, options: nil)?[0] as! UIView & ProcessHeader)
-            builder?.principalColor = UIColor.blue
-
         }
         
         return true

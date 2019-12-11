@@ -28,6 +28,7 @@
         builder.mainButtonStyle = KHMainButtonFatOnForm;
         builder.barLeftSideLogo = [[UIImage alloc] init];
         builder.processHeader = processHeader;
+        builder.principalColor = [UIColor blueColor];
     }];
     return YES;
 }

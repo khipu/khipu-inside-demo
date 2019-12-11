@@ -87,7 +87,7 @@ target 'Khipu Inside Demo' do
     use_frameworks!
 
     # Pods for Khipu Inside Demo
-    pod 'khenshin'
+    pod 'khenshin' #Fija la versión antes de pasar a producción
 end
 ```
 
@@ -133,12 +133,122 @@ En el archivo *AppDelegate.m* debes inicializar **khenshin** en el selector *did
     // Override point for customization after application launch.
     [KhenshinInterface initWithBuilderBlock:^(KhenshinBuilder *builder) {
         builder.APIUrl = @"https://khipu.com/app/enc/";
-        builder.mainButtonStyle = KHMainButtonFatOnForm;
-        builder.barLeftSideLogo = [[UIImage alloc] init];
     }];
     return YES;
 }
 ```
+## Parámetros de inicialización de khenshin
+
+En la sección anterior se utilizó la construcción minimal de khenshin, a continuación veremos todos los parámetros opcionales.
+
+```objc
+
+    [KhenshinInterface initWithBuilderBlock:^(KhenshinBuilder *builder) {
+        # Obligatorios
+        builder.APIUrl = @"https://khipu.com/app/enc/";
+
+        # Los siguientes parámetros son opcionales
+
+        # Permitir guardar credenciales bancarias en el dispositivo, pre-determinado no
+        builder.allowCredentialsSaving = YES;
+
+        # Estilo del botón continuar, puede ser:
+        # - KHMainButtonDefault: Botón en la barra de herramientas, pre-determinado
+        # - KHMainButtonFatOnForm: Botón en los formularios con fondo sólido
+        # - KHMainButtonSkinnyOnForm: Botón en los formularios sin fondo
+        builder.mainButtonStyle = KHMainButtonFatOnForm;
+
+        # Esconder la barra de navegación estilo browser, pre-determinado: no
+        builder.hideWebAddressInformationInForm = YES;
+
+        # Usar el logo de la app en la barra centrar del toolbar, pre-determinado: no
+        builder.useBarCenteredLogoInForm = YES;
+
+        # Logo para usar en la barra (UIImage), pre-determinado: nil
+        builder.barCenteredLogo = [[UIImage alloc] init];
+
+        # Logo para usar en la izquierda de la barra (UIImage), pre-determinado: nil
+        builder.barLeftSideLogo = [[UIImage alloc] init];
+
+        # Color principal de la app, barra principal y botones principales (UIColor)
+        builder.principalColor = [UIColor blueColor];
+
+        # Color principal oscuro, para barra de status (UIColor)
+        builder.darkerPrincipalColor = [UIColor blackColor];
+
+        # Color secundario (UIColor)
+        builder.secondaryColor = [UIColor redColor];
+
+        # Color de fondo de los formularios (UIColor)
+        builder.backgroundColor = [UIColor whiteColor];
+
+        # Tinte para la barra principal
+        builder.barTintColor = [UIColor whiteColor];
+
+        # Color para el indicador de progreso
+        builder.progressColor = [UIColor redColor];
+
+        # Tamaño del font de la barra de navegación
+        builder.navigationFontSize = 10.0;
+
+        # Color del texto de la barra de navegación
+        builder.navigationBarTextTint = [UIColor whiteColor];
+
+        # Color del texto en formularios
+        builder.textColorHex = @"#000000";
+
+        # Color de los controles en formularios
+        builder.normalControlColorHex = @"#333333";
+
+        # Font normal a usar
+        builder.font = [UIFont fontWithName:@"My-Font-Regular" size:16.0];
+
+        # Font bold a usar
+        builder.fontBold = [UIFont fontWithName:@"My-Font-Bold" size:16.0];
+
+        # Font light a usar
+        builder.fontLight = [UIFont fontWithName:@"My-Font-Light" size:16.0];
+
+        # No desplegar las páginas de salida, en vez, retornar directamente a la aplicación host.
+        builder.skipExitPage = YES;
+
+        # Mantener cookies entre una ejecución y otra
+        builder.keepCookies = YES;
+
+        # Imagen para poner en el fondo de los formularios
+        builder.backgroundImage = [[UIImage alloc] init];
+
+        # Imagen para usar como spinner de progreso
+        builder.spinnerImage = [[UIImage alloc] init];
+        
+        # Separador de decimales
+        builder.decimalSeparator = @",";
+
+        # Separador de miles
+        builder.groupingSeparator = @".";        
+
+        # Vista que se usa en el encabezado de los formularios khenshin, debe ser del tipo UIView<ProcessHeader>
+        PaymentProcessHeader *processHeader = [[[NSBundle mainBundle] loadNibNamed:@"PaymentProcessHeader" owner:self options:nil] objectAtIndex:0];        
+        builder.processHeader = processHeader;
+
+        # Vista que se usar al terminar un pago exitoso, debe ser del tipo UIViewController<ProcessExit>
+        PaymentProcessSuccess *processSuccess = [[[NSBundle mainBundle] loadNibNamed:@"PaymentProcessSuccess" owner:self options:nil] objectAtIndex:0];        
+        builder.processSuccess = processSuccess;
+
+        # Vista que se usar al terminar un pago con error, debe ser del tipo UIViewController<ProcessExit>
+        PaymentProcessFailure *processFailure = [[[NSBundle mainBundle] loadNibNamed:@"PaymentProcessFailure" owner:self options:nil] objectAtIndex:0];        
+        builder.processFailure = processFailure;
+
+        # Vista que se usar al terminar un pago con dudas sobre el resultado, debe ser del tipo UIViewController<ProcessExit>
+        PaymentProcessWarning *processWarning = [[[NSBundle mainBundle] loadNibNamed:@"PaymentProcessWarning" owner:self options:nil] objectAtIndex:0];        
+        builder.processWarning = processWarning;
+        
+
+    }];
+
+}
+```
+
 
 ## Invocar Khipu desde tu app
 

@@ -220,7 +220,7 @@ allprojects {
 Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
 
 ```gradle
-compile 'com.browser2app:khenshin:5.1.9'
+compile 'com.browser2app:khenshin:+' //Fija la versión antes de pasar a producción
 ```   
     
 ## Clase de tu aplicación
@@ -248,7 +248,7 @@ public class Demo extends Application implements KhenshinApplication {
 
 ## Parámetros de inicialización de khenshin
 
-En el párrafo anterior se utilizó la construcción minimal de khenshin, a continuación veremos todos los parámetros opcionales.
+En la sección anterior se utilizó la construcción minimal de khenshin, a continuación veremos todos los parámetros opcionales.
 
 ```java
 
