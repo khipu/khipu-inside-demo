@@ -251,45 +251,45 @@ En el párrafo anterior se utilizó la construcción minimal de khenshin, a cont
 ```java
 
             khenshin = new Khenshin.KhenshinBuilder()
-                    #obligatorios
+                    // Obligatorios
                     .setApplication(this) 
                     .setAPIUrl("https://khipu.com/app/enc/")
 
-                    # Opcionales
-                    # Estilo del botón continuar, puede ser:
-                    # - Khenshin.CONTINUE_BUTTON_IN_FORM: Dentro de cada formulario, al final de todos los campos
-                    # - Khenshin.CONTINUE_BUTTON_IN_TOOLBAR: En la barra de herramientas (arriba a la derecha), opción pre-determinada
-                    # - Khenshin.CONTINUE_BUTTON_IN_KEYBOARD: Incluido en el teclado del teléfono
+                    // Opcionales
+                    // Estilo del botón continuar, puede ser:
+                    // - Khenshin.CONTINUE_BUTTON_IN_FORM: Dentro de cada formulario, al final de todos los campos
+                    // - Khenshin.CONTINUE_BUTTON_IN_TOOLBAR: En la barra de herramientas (arriba a la derecha), opción pre-determinada
+                    // - Khenshin.CONTINUE_BUTTON_IN_KEYBOARD: Incluido en el teclado del teléfono
                     .setMainButtonStyle(Khenshin.CONTINUE_BUTTON_IN_FORM)
     
-                    # Permitir guardar credenciales bancarias en el dispositivo móvil, pre-determinado: no
+                    // Permitir guardar credenciales bancarias en el dispositivo móvil, pre-determinado: no
                     .setAllowCredentialsSaving(true)
         
-                    # Esconder la barra de navegación tipo browser en las páginas de pago, pre-determinado: no
+                    // Esconder la barra de navegación tipo browser en las páginas de pago, pre-determinado: no
                     .setHideWebAddressInformationInForm(true)
                 
-                    # Esconder la última página (éxito o fracaso del proceso de pago), pre-determinado: no
+                    // Esconder la última página (éxito o fracaso del proceso de pago), pre-determinado: no
                     .setSkipExitPage(true)
 
-                    # Esconder los mensajes de progreso entre etapas, se recomienda usar con un indicador de progeso personalizado, pre-determinado: no
+                    // Esconder los mensajes de progreso entre etapas, se recomienda usar con un indicador de progeso personalizado, pre-determinado: no
                     .setHideProgressDialogInTransition(true)
 
-                    # Indicador de progreso personalizado, puede ser un GIF animado o un Webp animado, pre-determinado: nulo
+                    // Indicador de progreso personalizado, puede ser un GIF animado o un Webp animado, pre-determinado: nulo
                     .setProgressAnimationResourceId(R.id.id_de_recurso)
 
-                    # Separador de decimales a utilizar, pre-determinado: el del locale del dispositivo
+                    // Separador de decimales a utilizar, pre-determinado: el del locale del dispositivo
                     .setDecimalSeparator(',')
 
-                    # Separador de miles a utilizar, pre-determinado: el del locale del dispositivo
+                    // Separador de miles a utilizar, pre-determinado: el del locale del dispositivo
                     .setGroupingSeparator('.')
 
-                    # Limpiar las cookies del nagevador antes de comenzar un pago, pre-determinado: no
+                    // Limpiar las cookies del nagevador antes de comenzar un pago, pre-determinado: no
                     .setClearCookiesBeforeStart(true)
 
-                    # Enviar automáticamente los formularios para los que ya están definidos todos los valores, pre-determinado: no
+                    // Enviar automáticamente los formularios para los que ya están definidos todos los valores, pre-determinado: no
                     .setAutoSubmitIfComplete(true)
 
-                    # Tipo de letra personalizado para usar en todos los formularios, ver: https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml
+                    // Tipo de letra personalizado para usar en todos los formularios, ver: https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml
                     .setFontResourceId(R.font.mi_fuente_de_letra)
 
                     .build();
