@@ -14,9 +14,11 @@ Este repositorio es la documentación y ejemplo de como realizar una integració
 
 ![schema.png](schema.png)
 
-## Pre-requisitos
+En khipu encontrarás lo necesario para integrar tu portal web o app sin que tengas que solicitar credenciales o recursos de acceso limitado. Puedes crear o descargar con autonomía todo lo que necesitas. La única excepción a esta regla son las cuentas de integrador. La cuentas de integrador son para desarrolladores de portales que crean comercios en khipu para la recaudación en sus soluciones. Por ejemplo, un mall virtual con muchas tiendas distintas o una solución que cobra los gastos de administraciónes de muchas comunidades en que cada comunidad es un comercio distinto. No se requiere una cuenta de integrador para una integración normal.
 
-1. Tener una cuenta de cobrador en [khipu.com](https://khipu.com). Existen cuentas de cobro regulares y en "modo desarrollador", en ambas el ciclo de creación, autorización y conciliación del pago es idéntica. La diferencia es que en las cuentas regulares se utilizan Bancos y dinero real mientras en las en "modo desarrollador" ficticios. Recomendamos usar una cuenta en "modo desarrollador" en el proceso de desarrollo y pruebas de la integración y en producción cambiar las credenciales de acceso a la API por las de una cuenta regular.
+## Pre-requisitos normales
+
+1. Tener una cuenta de cobrador en [khipu.com](https://khipu.com). Existen cuentas de cobro regulares y en "modo desarrollador". En ambas el ciclo de creación, autorización y conciliación del pago es idéntico. La diferencia es que en las cuentas regulares se utilizan Bancos y dinero real mientras en las en "modo desarrollador" ficticios. Recomendamos usar una cuenta en "modo desarrollador" en el proceso de desarrollo y pruebas de la integración y en producción cambiar las credenciales de acceso a la API por las de una cuenta regular.
 2. Un servidor capaz de conectarse por HTTPS a khipu.com y capaz de disponibilizar un endpoint web para recibir las notificaciones de conciliación de los pagos recibidos.
 3. Una aplicación móvil para Android o IOS. En este documento se asumirá que la aplicación es nativa, pero existen plugins y bridges para otras tecnologías como Cordova, React Native, etc.
 
