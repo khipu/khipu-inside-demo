@@ -50,7 +50,7 @@ Installing dependencies may take several minutes.
 Puedes agregar las plataformas ios y android a tu proyecto. (Recomendamos usar, al menos, cordova-ios 5.0.1 y cordova-android 8.0.0)
 
 ```bash
-PROMPT> ionic cordova platform add ios@5.0.1
+PROMPT> ionic cordova platform add ios
 
 
 > ionic integrations enable cordova
@@ -64,7 +64,7 @@ Al 7 de Junio de 2019, es necesario sobreescribir el parámetro target -> build 
 
 
 ```bash
-PROMPT> ionic cordova platform add android@8.0.0
+PROMPT> ionic cordova platform add android
 
 
 > cordova platform add android --save

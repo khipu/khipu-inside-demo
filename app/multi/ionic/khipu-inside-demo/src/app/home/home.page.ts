@@ -10,6 +10,6 @@ export class HomePage {
 
   constructor() {}
   doPay() {
-    khenshin.startByPaymentId('aiukpuwrhjte', success => console.log(success), err => console.log(err));
+    khenshin.startByPaymentId('ryrwfo3vhl3z', success => console.log(success), err => console.log(err));
   }
 }
