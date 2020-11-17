@@ -8,7 +8,7 @@ Los pasos necesarios para utilizar la biblioteca nativa android para B2app son:
 
 1. [Agregar los repositorios](#repositorios)
 2. [Agregar las dependencias](#dependencias)
-3. [Modificar la clase base de tu app](#clase-de-tu-aplicación)
+3. [Inicializar khenshin](#inicializar-khenshin)
 4. [Parámetros de inicialización de khenshin](#parámetros-de-inicialización-de-khenshin)
 5. [Configurar colores](#colores) y [vistas del proceso](#vistas)
 6. [Invocar b2app desde tu app](#invocación)
@@ -215,8 +215,6 @@ allprojects {
 }
 ```	
 
-Los campos khenshinRepoUsername y khenshinRepoPassword te serán proporcionados por tu ejecutivo Khipu, se deben incluir en el archivo gradle.properties en la raiz del proyecto y sin incluir al sistema de control de versiones.
-
 ## Dependencias
 
 Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
@@ -225,23 +223,22 @@ Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
 compile 'com.browser2app:khenshin:+' //Fija la versión antes de pasar a producción
 ```   
     
-## Clase de tu aplicación
+## Inicializar khenshin
 
-La clase principal de tu aplicación (la definida en el atributo android:name dentro del tag application en el AndroidManifest.xml) debe implementar la interfaz KhenshinApplication y en el constructor debe inicializar a Khenshin
+Debes inicializar khenshin antes de utilizarlo en los procesos de pago de tu app. Esto puede ser en el método onCreate de tu aplicación o en alguna otra parte del ciclo de vida de tu app. En este ejemplo lo haremos en el método onCreate de la actividad que posteriormente lanzará un pago.
 
 ```kotlin
-class Demo: Application(), KhenshinApplication {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    private val khenshinInterface: KhenshinInterface = Khenshin.KhenshinBuilder()
-        .setApplication(this)
-        .setAPIUrl("https://khipu.com/app/enc/")
-        .build()
-
-    override fun getKhenshin(): KhenshinInterface {
-        return khenshinInterface
+        // Khenshin es un singleton, debes inicializarlo sólo una vez
+        if(!Khenshin.isInitialized()) {
+            Khenshin.KhenshinBuilder()
+                .setApplication(application)
+                .setAPIUrl("https://khipu.com/app/enc/")
+                .build()
+        }
     }
-
-}
 ```
 
 ## Parámetros de inicialización de khenshin
@@ -252,7 +249,7 @@ En la sección anterior se utilizó la construcción minimal de khenshin, a cont
 
             khenshin = new Khenshin.KhenshinBuilder()
                     // Obligatorios
-                    .setApplication(this) 
+                    .setApplication(application) 
                     .setAPIUrl("https://khipu.com/app/enc/")
 
                     // Todas los siguientes parametros son opcionales
@@ -333,7 +330,7 @@ private val START_PAYMENT_REQUEST_CODE: Int = 1001
 	
 ...
 	
-        val intent: Intent = (application as KhenshinApplication).khenshin.startTaskIntent
+        val intent: Intent = Khenshin.getInstance().startTaskIntent
         intent.putExtra(KhenshinConstants.EXTRA_PAYMENT_ID, paymentId.text.toString())
         intent.putExtra(KhenshinConstants.EXTRA_FORCE_UPDATE_PAYMENT, false)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP

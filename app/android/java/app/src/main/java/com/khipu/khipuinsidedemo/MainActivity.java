@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.browser2app.khenshin.Khenshin;
 import com.browser2app.khenshin.KhenshinApplication;
 import com.browser2app.khenshin.KhenshinConstants;
 
@@ -22,11 +23,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         paymentId = findViewById(R.id.paymentId);
+
+        if(!Khenshin.isInitialized()){
+            new Khenshin.KhenshinBuilder()
+                    .setApplication(getApplication())
+                    .setAPIUrl("https://khipu.com/app/enc/")
+                    .build();
+        }
     }
 
     public void doPay(View view) {
 
-        Intent intent = ((KhenshinApplication)getApplication()).getKhenshin().getStartTaskIntent();
+        Intent intent = Khenshin.getInstance().getStartTaskIntent();
         intent.putExtra(KhenshinConstants.EXTRA_PAYMENT_ID, paymentId.getText().toString());  // ID DEL PAGO
         intent.putExtra(KhenshinConstants.EXTRA_FORCE_UPDATE_PAYMENT, false); // NO FORZAR LA ACTUALIZACION DE DATOS
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // LIMPIAR EL STACK DE ACTIVIDADES
@@ -37,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == START_PAYMENT_REQUEST_CODE) {
             String exitUrl = data.getStringExtra(KhenshinConstants.EXTRA_INTENT_URL);
             if (resultCode == RESULT_OK) {
