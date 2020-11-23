@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.browser2app.khenshin.Khenshin
-import com.browser2app.khenshin.KhenshinApplication
 import com.browser2app.khenshin.KhenshinConstants
 import kotlinx.android.synthetic.main.activity_main.*
 
