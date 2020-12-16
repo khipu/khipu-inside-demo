@@ -132,7 +132,7 @@ En el archivo *AppDelegate.swift* debes inicializar **khenshin** en la función 
         // Override point for customization after application launch.
         
         KhenshinInterface.initWithBuilderBlock {(builder: KhenshinBuilder?) -> Void in
-            builder?.APIUrl = "https://khipu.com/app/enc/"
+            builder?.apiUrl = "https://khipu.com/app/enc/"
         }
         
         return true
@@ -147,7 +147,7 @@ En la sección anterior se utilizó la construcción minimal de khenshin, a cont
 
     KhenshinInterface.initWithBuilderBlock {(builder: KhenshinBuilder?) -> Void in
         # Obligatorios
-        builder?.APIUrl = "https://khipu.com/app/enc/"
+        builder?.apiUrl = "https://khipu.com/app/enc/"
 
         # Los siguientes parámetros son opcionales
 
