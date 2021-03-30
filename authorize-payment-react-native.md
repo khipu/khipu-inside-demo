@@ -4,12 +4,12 @@
 
 ## Agrega la librería a tu proyecto react-native
 
-    npm install https://github.com/khipu/react-native-khenshin#1.0.2 --save
+    npm install https://github.com/khipu/react-native-khenshin#1.0.5 --save
 
 ## Instalación y configuración
 
 - [x] [react-native 0.59.x](https://github.com/khipu/react-native-khenshin/blob/master/docs/INSTALL.0.59.x.md)
-- [x] [react-native 0.60.x to 0.62.x](https://github.com/khipu/react-native-khenshin/blob/master/docs/INSTALL.0.60.x--0.62.x.md)
+- [x] [react-native 0.60.x to 0.64.x](https://github.com/khipu/react-native-khenshin/blob/master/docs/INSTALL.0.60.x--0.64.x.md)
 
 ## Uso
 
