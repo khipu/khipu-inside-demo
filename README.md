@@ -4,11 +4,13 @@
 
 Khipu Chile es un medio de pago que opera en Chile. Permite a comercios cobrar electrónicamente y a clientes pagar con sus cuentas bancarias (Corrientes, Vistas, Chequeras electrónicas, etc.).
 
-El uso estándar de Khipu requiere que el cliente pagador instale una aplicación móvil, el terminal de pagos Khipu.
+El uso estándar de Khipu requiere que el cliente autorize el pago en la página web de Khipu o que instale una aplicación móvil, el terminal de pagos Khipu.
 
-Khipu Inside permite, a comercios que cuenten con una App (Android y/o iOS), embeber el proceso de autorización del pago directmente en su App, bajando, con esto, la fricción en el proceso de compra y, por lo tanto, aumentando la conversión del proceso completo.
+Khipu Inside para Apps móviles permite, a comercios que cuenten con una App (Android y/o iOS), embeber el proceso de autorización del pago directmente en su App, bajando, con esto, la fricción en el proceso de compra y, por lo tanto, aumentando la conversión del proceso completo.
 
-Este repositorio es la documentación y ejemplo de como realizar una integración Khipu Inside. Se cubren los casos de aplicaciones Android e iOS y de servidores con tecnología Java, PHP, Ruby y .NET.
+Khipu Inside para Web pertime a comercios embeber el proceso de autorización de pago en su propia web sin redireccionar al pagador al sitio web de Khipu, obteniendo los mismos beneficios de en el caso App, es decir, bajar la fricción en el proceso de compra y aumentando la conversión.
+
+Este repositorio es la documentación y ejemplo de como realizar una integración Khipu Inside para Apps y Web. Se cubren los casos de aplicaciones Android e iOS, la versión Web y de servidores con tecnología Java, PHP, Ruby y .NET.
 
 ## Esquema general
 
@@ -20,7 +22,7 @@ En khipu encontrarás lo necesario para integrar tu portal web o app sin que ten
 
 1. Tener una cuenta de cobrador en [khipu.com](https://khipu.com). Existen cuentas de cobro regulares y en "modo desarrollador". En ambas el ciclo de creación, autorización y conciliación del pago es idéntico. La diferencia es que en las cuentas regulares se utilizan Bancos y dinero real mientras en las en "modo desarrollador" ficticios. Recomendamos usar una cuenta en "modo desarrollador" en el proceso de desarrollo y pruebas de la integración y en producción cambiar las credenciales de acceso a la API por las de una cuenta regular.
 2. Un servidor capaz de conectarse por HTTPS a khipu.com y capaz de disponibilizar un endpoint web para recibir las notificaciones de conciliación de los pagos recibidos.
-3. Una aplicación móvil para Android o IOS. En este documento se asumirá que la aplicación es nativa, pero existen plugins y bridges para otras tecnologías como Cordova, React Native, etc.
+3. Una aplicación móvil para Android o IOS. En este documento se asumirá que la aplicación es nativa, pero existen plugins y bridges para otras tecnologías como Cordova, React Native, etc. o una aplicación Web.
 
 
 ## Definición del cobro a realizar (en la app del cobrador)
@@ -66,6 +68,7 @@ Embeber khipu dentro de la App tiene tres etapas.
 
 En este repositorio se encuentran proyectos de ejemplo en:
 
+- Web (Javascript [ver documentación](authorize-payment-web.md)).
 - Android (Java [ver documentación](authorize-payment-java.md) y Kotlin [ver documentación](authorize-payment-kotlin.md)).
 - iOS (ObjC [ver documentación](authorize-payment-objc.md) y Swift [ver documentación](authorize-payment-swift.md)).
 - [React-Native](https://github.com/khipu/react-native-khenshin) (0.59.x - 0.62.x) [ver documentación](authorize-payment-react-native.md)

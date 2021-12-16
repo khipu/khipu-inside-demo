@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Khipu Inside Web - Demo</title>
+  <meta name="description" content="Esta es una demostración de Khipu Inside Web">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="theme-color" content="#fafafa">
+  <script src="https://js-scl.khipu.com/v1/kws.js"></script>
+</head>
+
+<body>
+
+  <h1>Khipu Inside Web - Demo</h1>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+
+  <div id="main">
+      <legend>Modal</legend>
+      <label>
+        On
+        <input type="radio" name="modal" value="true" checked>
+      </label>
+      <label>
+        Off
+        <input type="radio" name="modal" value="false">
+      </label>
+    <hr>
+      <legend>Skip Exit Page</legend>
+      <label>
+        On
+        <input type="radio" name="skipExitPage" value="true">
+      </label>
+      <label>
+        Off
+        <input type="radio" name="skipExitPage" value="false" checked>
+      </label>
+    <hr>
+      <legend>Style</legend>
+      <label for="primaryColor">Primary Color</label>
+      <input type="text" id="primaryColor" value="#8347AD">
+      <br />
+      <label for="textColor">Text Color</label>
+      <input type="text" id="textColor" value="#767E8D">
+      <br />
+      <label for="progressTextColor">Progress Text Color</label>
+      <input type="text" id="progressTextColor" value="#6E0380">
+      <br />
+      <label for="backgroundColor">Background Color</label>
+      <input type="text" id="backgroundColor" value="#FFFFFF">
+      <br />
+      <label for="statusBarBackgroundColor">Status Bar Background Color</label>
+      <input type="text" id="statusBarBackgroundColor" value="#F7F7F7">
+    <hr>
+    <legend>paymentId</legend>
+      <input type="text" id="paymentId">
+      <button onclick="pay()">Pagar</button>
+  </div>
+  <div id="khenshin-web-root"></div>
+  <script type="text/javascript">
+    const prettyJson = (obj) => JSON.stringify(obj, null, 4)
+
+    const successHandler = (result) => {
+      console.log(`Success handler: ${prettyJson(result)}`)
+      alert(`Success handler: ${prettyJson(result)}`);
+    };
+
+    const warningHandler = (warning) => {
+      console.log(`Warning handler: ${prettyJson(warning)}`)
+      alert(`Error handler: ${prettyJson(warning)}`);
+    };
+
+    const errorHandler = (error) => {
+      console.log(`Error handler: ${prettyJson(error)}`)
+      alert(`Error handler: ${prettyJson(error)}`);
+    };
+
+    let khipu = new Khipu();
+    const initKhipu = () => {
+      const modal = Array.prototype.slice.call(document.querySelectorAll('input[name="modal"]'))
+              .filter((radio) => radio.checked)
+              .map((radio) => radio.value)
+              .pop() === 'true'
+      const skipExitPage = Array.prototype.slice.call(document.querySelectorAll('input[name="skipExitPage"]'))
+              .filter((radio) => radio.checked)
+              .map((radio) => radio.value)
+              .pop() === 'true'
+
+      const options = {
+        mountElement: document.getElementById('khenshin-web-root'),
+        modal: modal,
+        options: {
+          style: {
+            primaryColor: document.querySelector('#primaryColor').value || '#8347ad',
+            textColor: document.querySelector('#textColor').value || '#767E8D',
+            progressTextColor: document.querySelector('#progressTextColor').value || '#6E0380',
+            backgroundColor: document.querySelector('#backgroundColor').value || '#ffffff',
+            statusBarBackgroundColor: document.querySelector('#statusBarBackgroundColor').value || '#F7F7F7',
+          },
+          skipExitPage: skipExitPage,
+        },
+      }
+      khipu.init(options, successHandler, warningHandler, errorHandler);
+    }
+
+    const pay = () => {
+      initKhipu()
+      const paymentId = document.querySelector('#paymentId')
+      khipu.start(paymentId.value.trim());
+    }
+    document.querySelector('#pay').addEventListener('click', pay);
+  </script>
+</body>
+
+</html>
