@@ -111,8 +111,10 @@ Si se desease cerrar la ventana de pago, por ejemplo, al capturar un mensaje de 
 ```
 
 Adicionalmente, para el caso de la ventana Modal, esta acción se realizará de forma interna en los links de:
-- "Anular pago y volver" disponible durante el pago.
-- "Finalizar y volver" que se muestra al finalizar el pago.
+- "Anular pago y volver" disponible durante el pago. Lo que llama al callback `errorHandler` con un mensaje 
+del tipo: `OPERATION_FAILURE` con failureReason: `USER_CANCELED`
+- "Finalizar y volver" que se muestra al finalizar el pago. Sin hacer llamadas adicionales a los callback, ya que
+al completarse la transacción se envió una llamada al `successHandler`.
 
 ## Reiniciar el pago
 
