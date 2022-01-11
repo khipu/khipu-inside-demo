@@ -6,7 +6,7 @@ Los pasos necesarios para utilizar la biblioteca nativa android para B2app son:
 
 1. [Incluir la biblioteca KWS](#incluir-la-biblioteca-kws)
 2. [Agregar el elemento ancla](#agregar-el-elemento-ancla)
-3. [Configurar khipu](#configurar-khipu)
+3. [Configurar Khipu](#configurar-khipu)
 4. [Iniciar el pago](#iniciar-el-pago)
 
 ## Incluir la biblioteca KWS
@@ -33,6 +33,8 @@ Khipu embebido se puede utilizar en modo "modal" o "incrustado". En ambos casos 
 
 Khipu Inside Web se puede incluir en dos modalidades, Modal o Incrustado.
 - Modal: Se levantará una ventana modal con un overlay gris sobre la página.
+  - Ancho máximo: Esta opción nos permite determinar el tamaño horizontal máximo de la modal ocupará
+  - Alto máximo: Esta opción nos permite determinar el tamaño vertical máximo de la modal ocupará
 - Incrustado: Se desplegará en el elemento ancla definido en la sección anterior.
 
 El estilo gráfico de Khipu Inside Web se puede modificar con los siguiente parámetros:
@@ -42,7 +44,8 @@ El estilo gráfico de Khipu Inside Web se puede modificar con los siguiente par�
 - backgroundColor: Color de fondo de la interfaz, se recomienda alto contraste con los colores de texto.
 - statusBarBackgroundColor: Color de fondo de la barra de status.
 
-Por ultimo, las páginas finales del proceso de pago (exito, alerta o fracaso) pueden ser renderizadas por Khipu Web o por la página del comercio. En ambos casos se recibe el resultado en una función de callback.
+Por último, las páginas finales del proceso de pago (éxito, alerta o fracaso) pueden ser renderizadas por Khipu Web o por la página del comercio. En ambos casos se recibe el resultado en una función de callback.
+En el caso de Khipu Web los links y botones de salida se configuran automáticamente con las urls enviadas al crear el pago a través de nuestra API. Con comportamientos especiales para la configuración modal.
 
 Para definir todos estos comportamientos, se debe inicializar Khipu de la siguiente forma.
 
@@ -71,12 +74,16 @@ Para definir todos estos comportamientos, se debe inicializar Khipu de la siguie
     const options = {
         mountElement: document.getElementById('khenshin-web-root'), //Elemento ancla
         modal: true, //false si se quiere incrustado
+        modalOptions: {
+            maxWidth: 750,
+            maxHeight: 750,
+        },
         options: {
           style: {
             primaryColor: '#8347ad',
             textColor: '#767E8D',
             progressTextColor: '#6E0380',
-            backgroundColor: '#ffffff',
+            backgroundColor: '#FFFFFF',
             statusBarBackgroundColor: '#F7F7F7',
           },
           skipExitPage: false, //true si se quiere que Khipu no pinte las páginas finales
@@ -94,3 +101,28 @@ Finalmente y con un identificador de pago (paymentId) obtenido como se explica e
 ```
 
 Recordar que siempre se debe esperar la notificación por API de khipu para considerar que un pago aprobado. Como se explican en [la documentación del proceso de pago](README.md).
+
+## Cerrar ventana de pago
+
+Si se desease cerrar la ventana de pago, por ejemplo, al capturar un mensaje de salida, basta con llamar el método
+
+```js
+   khipu.close();
+```
+
+Adicionalmente, para el caso de la ventana Modal, esta acción se realizará de forma interna en los links de:
+- "Anular pago y volver" disponible durante el pago. Lo que llama al callback `errorHandler` con un mensaje 
+del tipo: `OPERATION_FAILURE` con failureReason: `USER_CANCELED`
+- "Finalizar y volver" que se muestra al finalizar el pago. Sin hacer llamadas adicionales a los callback, ya que
+al completarse la transacción se envió una llamada al `successHandler`.
+
+## Reiniciar el pago
+
+Si se desease reiniciar el pago actual en caso de error u algún otro problema se puede utilizar el método
+
+```js
+   khipu.restart();
+```
+
+Adicionalmente, para el caso de la ventana Modal, esta acción se realizará de forma interna en los links de:
+- "Volver a intentarlo"
