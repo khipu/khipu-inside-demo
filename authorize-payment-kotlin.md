@@ -208,8 +208,8 @@ Se debe incluir el [repositorio maven de khenshin](https://dev.khipu.com/nexus/c
 ```gradle
 allprojects {
 	repositories {
-	    google()
-		jcenter()
+		google()
+		mavenCentral()
 		maven { url 'https://dev.khipu.com/nexus/content/repositories/khenshin' }
 	}
 }

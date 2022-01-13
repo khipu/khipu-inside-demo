@@ -203,13 +203,13 @@ Es importante mencionar que el tamaño al que nos referimos en este documento co
 
 ## Repositorios
 
-Se debe incluir el [repositorio maven de khenshin](https://dev.khipu.com/nexus/content/repositories/khenshin) así como jcenter
+Se debe incluir el [repositorio maven de khenshin](https://dev.khipu.com/nexus/content/repositories/khenshin) así como mavenCentral
 
 ```gradle
 allprojects {
 	repositories {
-	    google()
-		jcenter()
+		google()
+		mavenCentral()
 		maven { url 'https://dev.khipu.com/nexus/content/repositories/khenshin' }
 	}
 }
