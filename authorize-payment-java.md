@@ -220,7 +220,7 @@ allprojects {
 Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
 
 ```gradle
-compile 'com.browser2app:khenshin:+' //Fija la versión antes de pasar a producción
+implementation 'com.browser2app:khenshin:+' //Fija la versión antes de pasar a producción
 ```   
     
 ## Inicializar de khenshin
