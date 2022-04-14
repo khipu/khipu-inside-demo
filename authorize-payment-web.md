@@ -38,6 +38,7 @@ Khipu Inside Web se puede incluir en dos modalidades, Modal o Incrustado.
 - Incrustado: Se desplegará en el elemento ancla definido en la sección anterior.
 
 El estilo gráfico de Khipu Inside Web se puede modificar con los siguiente parámetros:
+- template: Formato y disposición de los elementos dentro de la interfaz, las opciones disponibles son 'classic' y 'card'.
 - primaryColor: Color principal de la interfaz, se recomienda usar el color principal de la marca.
 - textColor: Color de los textos utilizados en la interfaz.
 - progressTextColor: Color de los textos de los mensajes de progreso.
@@ -79,6 +80,7 @@ Para definir todos estos comportamientos, se debe inicializar Khipu de la siguie
             maxHeight: 750,
         },
         options: {
+          template: 'classic', // Las opciones disponibles son 'classic' y 'card'  
           style: {
             primaryColor: '#8347ad',
             textColor: '#767E8D',
