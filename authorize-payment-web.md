@@ -40,10 +40,18 @@ Khipu Inside Web se puede incluir en dos modalidades, Modal o Incrustado.
 El estilo gráfico de Khipu Inside Web se puede modificar con los siguiente parámetros:
 - template: Formato y disposición de los elementos dentro de la interfaz, las opciones disponibles son 'classic' y 'card'.
 - primaryColor: Color principal de la interfaz, se recomienda usar el color principal de la marca.
+- primaryColorVariant: Color que se utiliza en los enlaces. Si no se especifica, se deriva del primaryColor.
 - textColor: Color de los textos utilizados en la interfaz.
-- progressTextColor: Color de los textos de los mensajes de progreso.
-- backgroundColor: Color de fondo de la interfaz, se recomienda alto contraste con los colores de texto.
-- statusBarBackgroundColor: Color de fondo de la barra de status.
+- progressTextColor: Color de los textos de los mensajes de progreso. Si no se especifica, se deriva del primaryColor.
+- pageBackgroundColor: Color de fondo de la interfaz, se recomienda alto contraste con los colores de texto.
+- backgroundColor: Color de fondo de la caja que engloba a los formularios. Sólo aplica para el tema "card".
+- statusBarBackgroundColor: Color de fondo de la barra de status. Sólo aplica para el tema "default".
+- statusBarFontColor: Color de los textos de la barra de status. Sólo aplica para el tema "default".
+- buttonFontColor: Color de texto del botón continuar.
+- disabledFontColor: Color de texto del botón continuar cuando se encuentra deshabilitado.
+- disabledBackgroundColor: Color de fondo del botón continuar cuando se encuentra deshabilitado.
+- fontFamily: La tipografía que se utilizará en todo el proceso, puede ser cualquier Google Font. Valor pre-determinado: Roboto.
+- fontSizeMultiplier: Un multiplicador para aumentar o disminuir el tamaño de todos los textos. Valor pre-determinado: 1.0.
 
 Por último, las páginas finales del proceso de pago (éxito, alerta o fracaso) pueden ser renderizadas por Khipu Web o por la página del comercio. En ambos casos se recibe el resultado en una función de callback.
 En el caso de Khipu Web los links y botones de salida se configuran automáticamente con las urls enviadas al crear el pago a través de nuestra API. Con comportamientos especiales para la configuración modal.
@@ -76,17 +84,25 @@ Para definir todos estos comportamientos, se debe inicializar Khipu de la siguie
         mountElement: document.getElementById('khenshin-web-root'), //Elemento ancla
         modal: true, //false si se quiere incrustado
         modalOptions: {
-            maxWidth: 750,
-            maxHeight: 750,
+          maxWidth: 650,
+          maxHeight: 750,
         },
         options: {
-          template: 'classic', // Las opciones disponibles son 'classic' y 'card'  
+          template: 'card',
           style: {
-            primaryColor: '#8347ad',
-            textColor: '#767E8D',
-            progressTextColor: '#6E0380',
-            backgroundColor: '#FFFFFF',
-            statusBarBackgroundColor: '#F7F7F7',
+              primaryColor: '#8347AD',
+              primaryColorVariant: '#BC25D5',
+              textColor: '#767E8D',
+              progressTextColor: '#6E0380',
+              backgroundColor: '#FFFFFF',
+              pageBackgroundColor: '#FFFFFF',
+              statusBarBackgroundColor: '#F7F7F7',
+              statusBarFontColor: '#ffffff',
+              buttonFontColor: '#ffffff',
+              disabledFontColor: '#6D6B71',
+              disabledBackgroundColor: '#E3E3E3',
+              fontFamily: 'Roboto',
+              fontSizeMultiplier: 1.0,
           },
           skipExitPage: false, //true si se quiere que Khipu no pinte las páginas finales
         },
