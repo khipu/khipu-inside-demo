@@ -4,41 +4,43 @@
 
 ## Agrega la librería a tu proyecto react-native
 
-    npm install https://github.com/khipu/react-native-khenshin#1.1.0 --save
+    npm install https://github.com/khipu/react-native-khenshin#1.2.1 --save
 
 ## Instalación y configuración
 
 - [x] [react-native 0.59.x](https://github.com/khipu/react-native-khenshin/blob/master/docs/INSTALL.0.59.x.md)
-- [x] [react-native 0.60.x to 0.66.x](https://github.com/khipu/react-native-khenshin/blob/master/docs/INSTALL.0.60.x--0.66.x.md)
+- [x] [react-native 0.60.x to 0.71.x](https://github.com/khipu/react-native-khenshin/blob/master/docs/INSTALL.0.60.x--0.71.x.md)
 
 ## Uso
 
-```javascript
+```typescript
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
-const {RNKhenshin} = ReactNative.NativeModules;
+import {SafeAreaView, ScrollView, Header, Button} from 'react-native';
+import Khipu from 'react-native-khenshin';
 
-export default class MyApp extends React.Component {
- 
-  onStartPayment = () => {
-    RNKhenshin.startPaymentById('paymentId').then(({status, result}) => {
-      if (status === 'CONCILIATING') {
-         // khipu is conciliating the payment
-      } else if (status === 'USER_CANCELED') {
-        // The user cancelled the transaction
-      } else {
-        // Error!, see `result` for details
-        console.log(result);
-      }
-    });
-  };
- 
-  render() {
+function App(this: any): JSX.Element {
+    const onStartPayment = () => {
+        Khipu.startPaymentById('paymentId')
+            .then(({status, result}) => {
+                if (status === 'CONCILIATING') {
+                    // khipu is conciliating the payment
+                } else if (status === 'USER_CANCELED') {
+                    // The user cancelled the transaction
+                } else {
+                    // Error!, see `result` for details
+                    console.log(result);
+                }
+            })
+            .catch((err: any) => console.log({err}));
+    };
+
     return (
-      <TouchableOpacity onPress={this.onStartPayment}>
-        <Text>Start payment</Text>
-      </TouchableOpacity>
+        <SafeAreaView>
+            <ScrollView>
+                <Header />
+                <Button title={'pagar'} onPress={onStartPayment}></Button>
+            </ScrollView>
+        </SafeAreaView>
     );
-  }
 }
 ```
