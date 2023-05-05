@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="khenshin_primary">#be3e0c</color>
+    <color name="khenshin_primary_dark">#802a09</color>
+    <color name="khenshin_primary_text">#ffffff</color>
+
+    <color name="khenshin_accent">#2b4fc7</color>
+
+</resources>

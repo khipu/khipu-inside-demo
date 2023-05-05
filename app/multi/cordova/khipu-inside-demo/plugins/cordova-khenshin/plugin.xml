@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-khenshin" version="0.0.27">
+    <name>khenshin</name>
+    <description>khenshin Cordova Plugin</description>
+    <license>MIT</license>
+    <author>khipu</author>
+
+    <asset src="www/khenshin.js" target="js/khenshin.js"/>
+
+    <js-module src="www/khenshin.js" name="khenshin">
+        <clobbers target="khenshin"/>
+    </js-module>
+
+
+    <platform name="android">
+        <framework src="src/android/khenshin.gradle" custom="true" type="gradleReference"/>
+
+        <source-file src="src/android/com/browser2app/KhenshinPlugin.java" target-dir="src/com/browser2app"/>
+
+        <source-file src="src/android/khenshincolors.xml" target-dir="res/values"/>
+        <source-file src="src/android/khenshin_process_header.xml" target-dir="res/layout"/>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Khenshin">
+                <param name="android-package" value="com.browser2app.KhenshinPlugin"/>
+            </feature>
+        </config-file>
+
+
+        <hook type="before_plugin_install" src="scripts/android/beforeInstall.js"/>
+        <hook type="before_plugin_uninstall" src="scripts/android/beforeUninstall.js"/>
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="UIUserInterfaceStyle" target="*-Info.plist">
+            <string>Light</string>
+        </config-file>
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="khenshin"/>
+            </pods>
+        </podspec>
+
+        <!-- this entry is to statically preserve entitlements setting that is usually being set by `cordova build` dynamically (which leads to a build error) -->
+        <!--<preference name="ios-XCBuildConfiguration-CODE_SIGN_ENTITLEMENTS" value="$(PROJECT_DIR)/$(PROJECT_NAME)/Entitlements-$(CONFIGURATION).plist" />-->
+
+        <hook type="before_compile" src="scripts/ios/fixEntitlementsBuildSetting.js"/>
+        <source-file src="src/ios/PaymentProcessHeader.h" target-dir="src"/>
+        <source-file src="src/ios/PaymentProcessHeader.m" target-dir="src"/>
+        <source-file src="src/ios/PaymentProcessHeader.xib" target-dir="src"/>
+        <source-file src="src/ios/KhenshinPlugin.h" target-dir="src"/>
+        <source-file src="src/ios/KhenshinPlugin.m" target-dir="src"/>
+        <config-file target="config.xml" parent="/*">
+            <feature name="Khenshin">
+                <param name="ios-package" value="KhenshinPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+    </platform>
+
+</plugin>

@@ -1,0 +1,16 @@
+repositories{
+	google()
+	jcenter()
+	maven { url 'https://dev.khipu.com/nexus/content/repositories/khenshin' }
+}
+
+dependencies {
+	compile 'com.browser2app:khenshin:+'
+}
+
+android {
+	packagingOptions {
+		exclude 'META-INF/NOTICE'
+		exclude 'META-INF/LICENSE'
+	}
+}

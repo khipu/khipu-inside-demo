@@ -1,0 +1,10 @@
+{
+  "cordova-khenshin": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/khipu/cordova-khenshin"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

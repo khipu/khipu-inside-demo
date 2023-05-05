@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" ambiguous="YES" id="iN0-l3-epB" customClass="PaymentProcessHeader">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fundación Los Tres Patitos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpo-9o-Xyv">
+                    <rect key="frame" x="16" y="73" width="279" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="6Lb-3d-Rxi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Kl-Su-Wxo" customClass="UIImageViewAligned">
+                    <rect key="frame" x="0.0" y="0.0" width="382" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="Erv-F8-9rm"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="alignTop" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$12.500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4D-nU-28N">
+                    <rect key="frame" x="303" y="73" width="63" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="Z5S-iw-HI2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="f4D-nU-28N" firstAttribute="top" secondItem="zpo-9o-Xyv" secondAttribute="top" id="6tF-M6-3xS"/>
+                <constraint firstItem="8Kl-Su-Wxo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DJ3-sI-3Oq"/>
+                <constraint firstItem="f4D-nU-28N" firstAttribute="leading" secondItem="zpo-9o-Xyv" secondAttribute="trailing" constant="8" id="HZq-H1-r7C"/>
+                <constraint firstAttribute="bottom" secondItem="zpo-9o-Xyv" secondAttribute="bottom" constant="8" id="PcY-Fu-JMn"/>
+                <constraint firstItem="zpo-9o-Xyv" firstAttribute="top" secondItem="8Kl-Su-Wxo" secondAttribute="bottom" constant="8" id="Rnl-8n-7FF"/>
+                <constraint firstItem="f4D-nU-28N" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="Rx2-E5-FtQ"/>
+                <constraint firstAttribute="trailing" secondItem="8Kl-Su-Wxo" secondAttribute="trailing" id="aNR-7K-1HF"/>
+                <constraint firstItem="zpo-9o-Xyv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="ugC-Cm-cO2"/>
+                <constraint firstItem="8Kl-Su-Wxo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vsu-Fw-grS"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="amount" destination="f4D-nU-28N" id="35Y-0J-5F4"/>
+                <outlet property="merchantImage" destination="8Kl-Su-Wxo" id="0Ad-LZ-BhA"/>
+                <outlet property="subject" destination="zpo-9o-Xyv" id="g3k-UO-ua3"/>
+            </connections>
+            <point key="canvasLocation" x="50" y="92"/>
+        </view>
+    </objects>
+</document>
