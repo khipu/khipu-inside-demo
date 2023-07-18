@@ -16,7 +16,7 @@ Se debe incluir en la página la biblioteca kws.js dentro del tag <head> de la p
 ```html
 <head>
     ...
-    <script src="https://js-scl.khipu.com/v1/kws.js"></script>
+    <script src="https://js.khipu.com/v1/kws.js"></script>
     ...
 </head>
 ```
@@ -31,25 +31,14 @@ Khipu embebido se puede utilizar en modo "modal" o "incrustado". En ambos casos 
 
 ## Configurar Khipu
 
-Khipu Inside Web se puede incluir en dos modalidades, Modal o Incrustado.
+Khipu Inside Web se puede incluir en dos modalidades, Modal o Embebido.
 - Modal: Se levantará una ventana modal con un overlay gris sobre la página.
   - Ancho máximo: Esta opción nos permite determinar el tamaño horizontal máximo de la modal ocupará
   - Alto máximo: Esta opción nos permite determinar el tamaño vertical máximo de la modal ocupará
-- Incrustado: Se desplegará en el elemento ancla definido en la sección anterior.
+- Embebido: Se desplegará en el elemento ancla definido en la sección anterior.
 
 El estilo gráfico de Khipu Inside Web se puede modificar con los siguiente parámetros:
-- template: Formato y disposición de los elementos dentro de la interfaz, las opciones disponibles son 'classic' y 'card'.
 - primaryColor: Color principal de la interfaz, se recomienda usar el color principal de la marca.
-- primaryColorVariant: Color que se utiliza en los enlaces. Si no se especifica, se deriva del primaryColor.
-- textColor: Color de los textos utilizados en la interfaz.
-- progressTextColor: Color de los textos de los mensajes de progreso. Si no se especifica, se deriva del primaryColor.
-- pageBackgroundColor: Color de fondo de la interfaz, se recomienda alto contraste con los colores de texto.
-- backgroundColor: Color de fondo de la caja que engloba a los formularios. Sólo aplica para el tema "card".
-- statusBarBackgroundColor: Color de fondo de la barra de status. Sólo aplica para el tema "default".
-- statusBarFontColor: Color de los textos de la barra de status. Sólo aplica para el tema "default".
-- buttonFontColor: Color de texto del botón continuar.
-- disabledFontColor: Color de texto del botón continuar cuando se encuentra deshabilitado.
-- disabledBackgroundColor: Color de fondo del botón continuar cuando se encuentra deshabilitado.
 - fontFamily: La tipografía que se utilizará en todo el proceso, puede ser cualquier Google Font. Valor pre-determinado: Roboto.
 - fontSizeMultiplier: Un multiplicador para aumentar o disminuir el tamaño de todos los textos. Valor pre-determinado: 1.0.
 
@@ -82,27 +71,15 @@ Para definir todos estos comportamientos, se debe inicializar Khipu de la siguie
     let khipu = new Khipu();
     const options = {
         mountElement: document.getElementById('khenshin-web-root'), //Elemento ancla
-        modal: true, //false si se quiere incrustado
+        modal: true, //false si se quiere embebido
         modalOptions: {
-          maxWidth: 650,
+          maxWidth: 450,
           maxHeight: 750,
         },
         options: {
-          template: 'card',
           style: {
               primaryColor: '#8347AD',
-              primaryColorVariant: '#BC25D5',
-              textColor: '#767E8D',
-              progressTextColor: '#6E0380',
-              backgroundColor: '#FFFFFF',
-              pageBackgroundColor: '#FFFFFF',
-              statusBarBackgroundColor: '#F7F7F7',
-              statusBarFontColor: '#ffffff',
-              buttonFontColor: '#ffffff',
-              disabledFontColor: '#6D6B71',
-              disabledBackgroundColor: '#E3E3E3',
               fontFamily: 'Roboto',
-              fontSizeMultiplier: 1.0,
           },
           skipExitPage: false, //true si se quiere que Khipu no pinte las páginas finales
         },
