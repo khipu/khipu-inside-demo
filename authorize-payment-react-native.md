@@ -1,10 +1,12 @@
 # Autorizar el pago en una aplicación react-native
 
-> Esta librería está disponible sólo para Android momentáneamente.
-
 ## Agrega la librería a tu proyecto react-native
 
     npm install https://github.com/khipu/react-native-khenshin#1.2.1 --save
+
+Seguramente vas a preferir hacer un fork del proyecto react-native-khenshin para poder personalizar la interfaz. En ese caso debes instalarlo desde tu repositorio forkeado.
+
+    npm install https://<my-custom-repo> --save
 
 ## Instalación y configuración
 
