@@ -18,7 +18,7 @@ o
 
 ## Instalación y configuración
 
-- [x] [react-native 0.60.x to 0.72.x](https://github.com/khipu/react-native-khenshin/blob/master/docs/INSTALL.0.60.x--0.71.x.md)
+- [x] [react-native 0.60.x to 0.72.x](https://github.com/khipu/react-native-khenshin/blob/master/docs/INSTALL.0.60.x--0.72.x.md)
 
 ## Uso
 
