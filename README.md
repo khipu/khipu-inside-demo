@@ -72,7 +72,8 @@ En este repositorio se encuentran proyectos de ejemplo en:
 - Android (Java [ver documentación](authorize-payment-java.md) y Kotlin [ver documentación](authorize-payment-kotlin.md)).
 - iOS (ObjC [ver documentación](authorize-payment-objc.md) y Swift [ver documentación](authorize-payment-swift.md)).
 - [React-Native](https://github.com/khipu/react-native-khenshin) (0.59.x - 0.62.x) [ver documentación](authorize-payment-react-native.md)
-- Multi-plataforma (ionic/cordova [ver documentacion](authorize-payment-ionic.md)).
+- ionic/cordova [ver documentación](authorize-payment-ionic.md).
+- capacitor [ver documentación](authorize-payment-capacitor.md)
 
 ## Recepción de la notificación de conciliación (en el servidor del cobrador)
 
