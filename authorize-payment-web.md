@@ -6,8 +6,7 @@ Los pasos necesarios para utilizar la biblioteca nativa android para B2app son:
 
 1. [Incluir la biblioteca KWS](#incluir-la-biblioteca-kws)
 2. [Agregar el elemento ancla](#agregar-el-elemento-ancla)
-3. [Configurar Khipu](#configurar-khipu)
-4. [Iniciar el pago](#iniciar-el-pago)
+3. [Configurar Khipu e iniciar el pago](#configurar-khipu-e-iniciar-el-pago)
 
 ## Incluir la biblioteca KWS
 
