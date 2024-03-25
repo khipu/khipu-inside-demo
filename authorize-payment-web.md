@@ -29,7 +29,7 @@ Khipu embebido se puede utilizar en modo "modal" o "incrustado". En ambos casos 
 <div id="khipu-web-root"></div>
 ```
 
-## Configurar Khipu
+## Configurar Khipu e iniciar el pago
 
 Khipu Inside Web se puede incluir en dos modalidades, Modal o Embebido.
 - Modal: Se levantará una ventana modal con un overlay gris sobre la página.
@@ -42,57 +42,56 @@ El estilo gráfico de Khipu Inside Web se puede modificar con los siguiente par�
 - fontFamily: La tipografía que se utilizará en todo el proceso, puede ser cualquier Google Font. Valor pre-determinado: Roboto.
 - fontSizeMultiplier: Un multiplicador para aumentar o disminuir el tamaño de todos los textos. Valor pre-determinado: 1.0.
 
-Por último, las páginas finales del proceso de pago (éxito, alerta o fracaso) pueden ser renderizadas por Khipu Web o por la página del comercio. En ambos casos se recibe el resultado en una función de callback.
-En el caso de Khipu Web los links y botones de salida se configuran automáticamente con las urls enviadas al crear el pago a través de nuestra API. Con comportamientos especiales para la configuración modal.
+Las páginas finales del proceso de pago (éxito, alerta o fracaso) pueden ser renderizadas por Khipu Web o por la página del comercio. En ambos casos se recibe el resultado en una función de callback.
 
-Para definir todos estos comportamientos, se debe inicializar Khipu de la siguiente forma.
+La función de callback será invocada con un objeto que tendrá los siguientes campos
 
-```js
-    const prettyJson = (obj) => JSON.stringify(obj, null, 4)
-
-    //callback que se llamará cuando el banco origen declare exitoso el pago
-    const successHandler = (result) => {
-      console.log(`Success handler: ${prettyJson(result)}`)
-      alert(`Success handler: ${prettyJson(result)}`);
-    };
-
-    //callback que se llamará cuando el resultado del pago sea indeterminado
-    const warningHandler = (warning) => {
-      console.log(`Warning handler: ${prettyJson(warning)}`)
-      alert(`Error handler: ${prettyJson(warning)}`);
-    };
-
-    //callback que se llamará cuando el resultado del pago sea un fracaso
-    const errorHandler = (error) => {
-      console.log(`Error handler: ${prettyJson(error)}`)
-      alert(`Error handler: ${prettyJson(error)}`);
-    };
-
-    let khipu = new Khipu();
-    const options = {
-        mountElement: document.getElementById('khenshin-web-root'), //Elemento ancla
-        modal: true, //false si se quiere embebido
-        modalOptions: {
-          maxWidth: 450,
-          maxHeight: 750,
-        },
-        options: {
-          style: {
-              primaryColor: '#8347AD',
-              fontFamily: 'Roboto',
-          },
-          skipExitPage: false, //true si se quiere que Khipu no pinte las páginas finales
-        },
-    }
-    khipu.init(options, successHandler, warningHandler, errorHandler);
+```json
+  {
+    "operationId": <codigo unico de operacion>, // string
+    "result": <OK | ERROR | WARNING>,
+    "failureReason": <Motivo de la falla>,
+    "exitTitle": <texto propuesto por Khipu para el titulo de la página de salida>, //string
+    "exitMessage": <texto propuesto por Khipu para el cuerpo de la página de salida>, //string
+    "exitUrl": <URL a la que redirigir al usuario luego de mostrar la página de salida>, //string
+    "events": <arreglo con los pasos realizados para generar el pago, con sus estampas de tiempo>
+  }
 ```
 
-## Iniciar el pago
+El campo result puede ser:
+
+- `OK`: Se autorizó correctamente el pago en el banco de origen. El pago se está validando y se enviará una notificación por el servidor cuando este validado.
+- `ERROR`: El pago no se autorizó correctamente, en `exitMessage` se encuentra el motivo a entregar al cliente y en `failureReason` el tipo de error.
+- `WARNING`: El pago no se ha completado pero es posible que ocurra. Por ejemplo, el banco de origen tuvo un error al generar el comprobante de pago pero el dinero si se envió o faltan más firmantes en una transferencia de varios actores. Khipu comenzó el proceso de monitoreo de la cuenta de destino para validar el pago.
+
+En el caso de Khipu Web los links y botones de salida se configuran automáticamente con las urls enviadas al crear el pago a través de nuestra API. Con comportamientos especiales para la configuración modal.
 
 Finalmente y con un identificador de pago (paymentId) obtenido como se explica en [la documentación del proceso de pago](README.md) se puede iniciar un pago usando Khipu Inside Web.
 
 ```js
-   khipu.start('ID DE PAGO DE 12 CARACTERES');
+
+    const callback = (result) => {
+      console.log(`calback invoked:`, result);
+    };
+
+    const options = {
+    mountElement: document.getElementById('khenshin-web-root'), //Elemento ancla
+    modal: true, //false si se quiere embebido
+    modalOptions: {
+      maxWidth: 450,
+      maxHeight: 860,
+    },
+    options: {
+        style: {
+          primaryColor: '#8347AD',
+          fontFamily: 'Roboto',
+        },
+        skipExitPage: false, //true si se quiere que Khipu no pinte las páginas finales
+      },
+    }
+
+
+    khipu.startOperation('ID DE PAGO DE 12 CARACTERES', callback, options);
 ```
 
 Recordar que siempre se debe esperar la notificación por API de khipu para considerar que un pago aprobado. Como se explican en [la documentación del proceso de pago](README.md).
