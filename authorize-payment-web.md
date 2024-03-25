@@ -88,7 +88,8 @@ Finalmente y con un identificador de pago (paymentId) obtenido como se explica e
         skipExitPage: false, //true si se quiere que Khipu no pinte las páginas finales
       },
     }
-
+    
+    const khipu = new Khipu();
 
     khipu.startOperation('ID DE PAGO DE 12 CARACTERES', callback, options);
 ```
