@@ -651,8 +651,6 @@ implementation 'com.khipu:khenshin-client-android:+' //Fija la versión antes de
 
 ## Invocar khenshin
 
-Debes inicializar khenshin antes de utilizarlo en los procesos de pago de tu app. Esto puede ser en el método onCreate de tu aplicación o en alguna otra parte del ciclo de vida de tu app. En este ejemplo lo haremos en el método onCreate de la actividad que posteriormente lanzará un pago.
-
 ```java
     //Creamos un lanzador de la actividad de khenshin y definimos un callback para mostrar la respuesta
     ActivityResultLauncher khipuLauncher = registerForActivityResult(
