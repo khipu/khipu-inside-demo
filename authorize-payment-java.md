@@ -8,11 +8,11 @@ Los pasos necesarios para utilizar la biblioteca nativa android para realizar pa
 
 1. [Agregar los repositorios](#repositorios)
 2. [Agregar las dependencias](#dependencias)
-3. [Inicializar el cliente](#inicializar-khenshin)
+3. [Invocar Khenshin](#invocar-khenshin)
 4. [Parámetros de inicialización](#parámetros-de-inicialización-de-khenshin)
 5. [Configurar colores](#colores) y [vistas del proceso](#vistas)
-6. [Invocar Khipu desde tu app](#invocación)
-7. [Recibir la respuesta en tu app](#respuesta)
+6. [Recibir la respuesta en tu app](#respuesta)
+
 
 
 ## Tamaño de la biblioteca (cuanto afecta a tu aplicación)
@@ -649,7 +649,7 @@ Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
 implementation 'com.khipu:khenshin-client-android:+' //Fija la versión antes de pasar a producción
 ```   
 
-## Inicializar khenshin
+## Invocar khenshin
 
 Debes inicializar khenshin antes de utilizarlo en los procesos de pago de tu app. Esto puede ser en el método onCreate de tu aplicación o en alguna otra parte del ciclo de vida de tu app. En este ejemplo lo haremos en el método onCreate de la actividad que posteriormente lanzará un pago.
 
@@ -672,10 +672,6 @@ Debes inicializar khenshin antes de utilizarlo en los procesos de pago de tu app
           getBaseContext(),
           operationId,
           new KhenshinOptions.Builder()
-            .topBarTitle("Khipu")
-            .theme(theme)
-            .skipExitPage(false)
-            .locale("es_CL")
             .build()
         ));
 ```
@@ -752,7 +748,6 @@ En la sección anterior se utilizó la construcción minimal de khenshin, a cont
 
 En tu proyecto puedes determinar los colores que usará Khenshin en las pantallas de pago usando el constructor de KhenshinColors. cada uno de los campos recibe un string que representa un color en hexadecimal.
 
-
 ## Vistas
 
 Para personalizar aún más la visualización de Khenshin puedes definir tu propia cabecera.
@@ -773,40 +768,6 @@ Tu cabecera personalizada debe estar en formato xml y normalmente estará ubicad
         .subjectId(R.id.subject_value)
         .build()
 
-```
-
-
-
-## Invocación
-
-Para iniciar un pago con Khenshin debes definir un lanzador para el intent de Khenshin y luego usar el método getKhenshinLauncherIntent con los parametros que tengas definidos.
-
-Al definir el lanzador del intent, definimos también la funcion de callback que será ejecutada una vez que el intent de Khenshin termine su ejecución.
-
-```java
-    ActivityResultLauncher khipuLauncher = registerForActivityResult(
-        new ActivityResultContracts.StartActivityForResult(),
-        new ActivityResultCallback() {
-          @Override
-          public void onActivityResult(Object o) {
-                  Log.v("Callback", "mensaje final recibido " + o.toString());
-                  KhenshinResult result = (KhenshinResult) ((ActivityResult) o).getData().getExtras().getSerializable(KHENSHIN_RESULT_EXTRA);
-                  resultText.setText(result.toString());
-                  }
-        });
-	
-...
-
-        khipuLauncher.launch(getKhenshinLauncherIntent(
-          getBaseContext(),
-          operationId,
-            new KhenshinOptions.Builder()
-            .topBarTitle("Khipu")
-            .theme(theme)
-            .skipExitPage(false)
-            .locale("es_CL")
-            .build()
-        ));
 ```
 
 ## Respuesta
