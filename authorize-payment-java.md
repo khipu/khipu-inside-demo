@@ -8,6 +8,7 @@ Los pasos necesarios para utilizar la biblioteca nativa android para realizar pa
 
 1. [Agregar los repositorios](#repositorios)
 2. [Agregar las dependencias](#dependencias)
+3. [Agregar plugin de Kotlin](#agregar-plugin-de-kotlin)
 3. [Invocar Khenshin](#invocar-khenshin)
 4. [Parámetros de inicialización](#parámetros-de-inicialización-de-khenshin)
 5. [Configurar colores](#colores) y [vistas del proceso](#vistas)
@@ -648,6 +649,16 @@ Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
 ```gradle
 implementation 'com.khipu:khenshin-client-android:+' //Fija la versión antes de pasar a producción
 ```   
+
+## Agregar plugin de Kotlin
+
+Para poder usar la biblioteca es necesario agregar el plugin de kotlin-android al proyecto. 
+
+```build.gradle.kts
+plugins {
+  id("org.jetbrains.kotlin.android") version "2.0.0-RC2"
+}
+```
 
 ## Invocar khenshin
 
