@@ -9,8 +9,8 @@ Los pasos necesarios para utilizar la biblioteca nativa android para realizar pa
 1. [Agregar los repositorios](#repositorios)
 2. [Agregar las dependencias](#dependencias)
 3. [Agregar plugin de Kotlin](#agregar-plugin-de-kotlin)
-3. [Invocar Khenshin](#invocar-khenshin)
-4. [Parámetros de inicialización](#parámetros-de-inicialización-de-khenshin)
+3. [Invocar Khipu](#invocar-khipu)
+4. [Parámetros de inicialización](#parámetros-de-inicialización-del-cliente-de-khipu)
 5. [Configurar colores](#colores) y [vistas del proceso](#vistas)
 6. [Recibir la respuesta en tu app](#respuesta)
 
@@ -18,11 +18,11 @@ Los pasos necesarios para utilizar la biblioteca nativa android para realizar pa
 
 ## Tamaño de la biblioteca (cuanto afecta a tu aplicación)
 
-La biblioteca khenshin se distribuye como un artefacto android (extensión .aar). En la versión actual (1.2) pesa 1.73 MB y referencia una lista de bibliotecas externas que en la medida que ya se estén utilizando no afectarían el tamaño de la aplicación.
+La biblioteca del cliente de khipu se distribuye como un artefacto android (extensión .aar). En la versión actual (1.2) pesa 1.73 MB y referencia una lista de bibliotecas externas que en la medida que ya se estén utilizando no afectarían el tamaño de la aplicación.
 
-El tamaño final que agregará khenshin a tu aplicación quedará determinado por la cantidad de bibliotecas repetidas e irá entre 800 KB y 9 MB en el caso que construyas un APK por arquitectura (recomendado) y entre 800 KB y 20 MB si sólo construyes un APK con todas las arquitecturas incluidas.
+El tamaño final que agregará el cliente de khipu a tu aplicación quedará determinado por la cantidad de bibliotecas repetidas e irá entre 800 KB y 9 MB en el caso que construyas un APK por arquitectura (recomendado) y entre 800 KB y 20 MB si sólo construyes un APK con todas las arquitecturas incluidas.
 
-Para que puedas estimar el grado de repetición de bibliotecas con las que ya usas en tu aplicación. Estas son todas las bibliotecas que khenshin usa:
+Para que puedas estimar el grado de repetición de bibliotecas con las que ya usas en tu aplicación. Estas son todas las bibliotecas que el cliente de khipu usa:
 
 ```
 +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0
@@ -630,7 +630,7 @@ Es importante mencionar que el tamaño al que nos referimos en este documento co
 
 ## Repositorios
 
-Se debe incluir el [repositorio maven de khenshin](https://dev.khipu.com/nexus/content/repositories/khenshin) así como jcenter
+Se debe incluir el [repositorio maven del cliente de khipu](https://dev.khipu.com/nexus/content/repositories/khenshin) así como jcenter
 
 ```gradle
 allprojects {
@@ -644,10 +644,10 @@ allprojects {
 
 ## Dependencias
 
-Con los repositorios agregados puedes agregar el paquete khenshin a tu proyecto.
+Con los repositorios agregados puedes agregar el paquete del cliente de khipu a tu proyecto.
 
 ```gradle
-implementation 'com.khipu:khenshin-client-android:+' //Fija la versión antes de pasar a producción
+implementation 'com.khipu:khipu-client-android:+' //Fija la versión antes de pasar a producción
 ```   
 
 ## Agregar plugin de Kotlin
@@ -660,46 +660,55 @@ plugins {
 }
 ```
 
-## Invocar khenshin
+## Invocar Khipu
 
 ```java
-    //Creamos un lanzador de la actividad de khenshin y definimos un callback para mostrar la respuesta
+import static com.khipu.client.KhipuKt.getKhipuLauncherIntent;
+import static com.khipu.client.KhipuKt.KHIPU_RESULT_EXTRA;
+
+
+import com.khipu.client.KhipuOptions;
+import com.khipu.client.KhipuResult;
+
+
+
+    //Creamos un lanzador de la actividad del cliente de khipu y definimos un callback para mostrar la respuesta
     ActivityResultLauncher khipuLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback() {
               @Override
               public void onActivityResult(Object o) {
                       Log.v("Callback", "mensaje final recibido " + o.toString());
-                      KhenshinResult result = (KhenshinResult) ((ActivityResult) o).getData().getExtras().getSerializable(KHENSHIN_RESULT_EXTRA);
+                      KhipuResult result = (KhipuResult) ((ActivityResult) o).getData().getExtras().getSerializable(KHIPU_RESULT_EXTRA);
                       resultText.setText(result.toString());
                       }
         });
     ...
     
     //Mas adelante, iniciamos la actividad
-        khipuLauncher.launch(getKhenshinLauncherIntent(
+        khipuLauncher.launch(getKhipuLauncherIntent(
           getBaseContext(),
           operationId,
-          new KhenshinOptions.Builder()
+          new KhipuOptions.Builder()
             .build()
         ));
 ```
 
-## Parámetros de inicialización de khenshin
+## Parámetros de inicialización del cliente de khipu
 
-En la sección anterior se utilizó la construcción minimal de khenshin, a continuación veremos todos los parámetros opcionales.
+En la sección anterior se utilizó la construcción minimal del cliente de khipu, a continuación veremos todos los parámetros opcionales.
 
 ```java
 
-    getKhenshinLauncherIntent(
+    getKhipuLauncherIntent(
         //Obligatorios
         getBaseContext(),
         operationId,
         //Constructor de opciones
-        new KhenshinOptions.Builder()
-            //Configura la cabecera de la actividad de pago con elementos como títulos y logos, usando el objeto KhenshinHeader.
+        new KhipuOptions.Builder()
+            //Configura la cabecera de la actividad de pago con elementos como títulos y logos, usando el objeto KhipuHeader.
             .header(
-              new KhenshinHeader.Builder()
+              new KhipuHeader.Builder()
                 //Identificador de cabecera personalizada
                 .headerLayoutId(R.layout.header_layout)
                 //Identificador de contenedor de nombre del comercio
@@ -714,7 +723,7 @@ En la sección anterior se utilizó la construcción minimal de khenshin, a cont
             )
             //Título para la barra superior durante el proceso de pago.
             .topBarTitle("Khipu")
-            //Permite seleccionar el tema, soporta KhenshinOptions.Theme.LIGHT y KhenshinOptions.Theme.DARK
+            //Permite seleccionar el tema, soporta KhipuOptions.Theme.LIGHT y KhipuOptions.Theme.DARK
             .theme(theme)
             //Si es verdadero, se omite la página de resumen al final del proceso de pago.
             .skipExitPage(false)
@@ -722,7 +731,7 @@ En la sección anterior se utilizó la construcción minimal de khenshin, a cont
             .locale("es_CL")
             //Permite personalizar los colores de la interfaz de usuario.
             .colors(
-                new KhenshinColors.Builder()
+                new KhipuColors.Builder()
                     //Color de fondo para la barra superior en modo claro.
                     .lightTopBarContainer(lightTopBarContainer)
                     //Color de los elementos en la barra superior en modo claro.
@@ -755,16 +764,16 @@ En la sección anterior se utilizó la construcción minimal de khenshin, a cont
 
 ## Colores
 
-En tu proyecto puedes determinar los colores que usará Khenshin en las pantallas de pago usando el constructor de KhenshinColors. cada uno de los campos recibe un string que representa un color en hexadecimal.
+En tu proyecto puedes determinar los colores que usará el cliente de khipu en las pantallas de pago usando el constructor de KhipuColors. cada uno de los campos recibe un string que representa un color en hexadecimal.
 
 ## Vistas
 
-Para personalizar aún más la visualización de Khenshin puedes definir tu propia cabecera.
+Para personalizar aún más la visualización del cliente de khipu puedes definir tu propia cabecera.
 
-Tu cabecera personalizada debe estar en formato xml y normalmente estará ubicado en res/layout. La cabecera debe tener definidos campos para mostrar el asunto del pago, el nombre del comercio, el medio de pago y el monto. Una vez definidos, se pasan al constructor de cabecera KhenshinHeader y se agregan al campo header del constructor de opciones KhenshinOptions:
+Tu cabecera personalizada debe estar en formato xml y normalmente estará ubicado en res/layout. La cabecera debe tener definidos campos para mostrar el asunto del pago, el nombre del comercio, el medio de pago y el monto. Una vez definidos, se pasan al constructor de cabecera KhipuHeader y se agregan al campo header del constructor de opciones KhipuOptions:
 
 ```java
-    new KhenshinHeader.Builder()
+    new KhipuHeader.Builder()
         //Identificador de cabecera personalizada
         .headerLayoutId(R.layout.header_layout)
         //Identificador de contenedor de nombre del comercio
@@ -781,7 +790,7 @@ Tu cabecera personalizada debe estar en formato xml y normalmente estará ubicad
 
 ## Respuesta
 
-Al momento de crear el lanzador de Khenshin, se define el callback con las acciones necesarias para terminar el proceso
+Al momento de crear el lanzador del cliente de khipu, se define el callback con las acciones necesarias para terminar el proceso
 
 ```java
     ActivityResultLauncher khipuLauncher = registerForActivityResult(
@@ -789,13 +798,13 @@ Al momento de crear el lanzador de Khenshin, se define el callback con las accio
         new ActivityResultCallback() {
         @Override
         public void onActivityResult(Object o) {
-                KhenshinResult result = (KhenshinResult) ((ActivityResult) o).getData().getExtras().getSerializable(KHENSHIN_RESULT_EXTRA);
+                KhipuResult result = (KhipuResult) ((ActivityResult) o).getData().getExtras().getSerializable(KHIPU_RESULT_EXTRA);
                 resultText.setText(result.toString());
                 }
         });
 ```
 
-El objeto KhenshinResult contiene la información del resultado del proceso. Contiene los siguientes campos:
+El objeto KhipuResult contiene la información del resultado del proceso. Contiene los siguientes campos:
 
 - **operationId**:`String`
   El identificador único de la intención de pago
@@ -815,4 +824,6 @@ El objeto KhenshinResult contiene la información del resultado del proceso. Con
   Describe la razón del fallo, si la operación no fue exitosa.
 - **continueUrl**: `String`(Opcional)
   Disponible solo cuando el resultado es "CONTINUE", que indica la URL a seguir para continuar la operación.
+- **events**: `KhipuEvent[]`
+  Un arreglo con los eventos que ocurrieron durante el pago.
 
