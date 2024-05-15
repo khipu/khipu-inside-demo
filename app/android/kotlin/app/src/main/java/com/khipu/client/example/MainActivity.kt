@@ -30,14 +30,14 @@ import androidx.compose.ui.unit.dp
 import com.khipu.client.KHIPU_RESULT_EXTRA
 import com.khipu.client.KhipuOptions
 import com.khipu.client.KhipuResult
-import com.khipu.client.example.ui.theme.KhenshinSdkExampleTheme
+import com.khipu.client.example.ui.theme.KhipuClientExampleTheme
 import com.khipu.client.getKhipuLauncherIntent
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            KhenshinSdkExampleTheme {
+            KhipuClientExampleTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -126,7 +126,7 @@ fun paymentStart() {
                             operationId = text.value,
                             options = KhipuOptions.Builder()
 //                            .header(
-//                                KhenshinHeader.Builder()
+//                                KhipuHeader.Builder()
 //                                    .headerLayoutId(processHeaderLayoutId)
 //                                    .merchantNameId(merchantNameResourceId)
 //                                    .paymentMethodId(paymentMethodResourceId)
@@ -140,7 +140,7 @@ fun paymentStart() {
                                 .theme(themeSelected)
                                 .locale("es_CL")
 //                            .colors(
-//                                KhenshinColors.Builder()
+//                                KhipuColors.Builder()
 //                                    .lightTopBarContainer(lightTopBarContainer)
 //                                    .lightOnTopBarContainer(lightOnTopBarContainer)
 //                                    .lightPrimary(lightPrimary)
@@ -173,7 +173,7 @@ fun paymentStart() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    KhenshinSdkExampleTheme {
+    KhipuClientExampleTheme {
         paymentStart()
     }
 }
