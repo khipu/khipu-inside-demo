@@ -1,4 +1,4 @@
-package com.khipu.browser2app.khenshinsdkexample
+package com.khipu.client.example
 
 import android.app.Activity
 import android.os.Bundle
@@ -27,12 +27,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.khipu.browser2app.khenshinsdkexample.ui.theme.KhenshinSdkExampleTheme
-import com.khipu.khenshin.client.KHENSHIN_RESULT_EXTRA
-import com.khipu.khenshin.client.KhenshinColors
-import com.khipu.khenshin.client.KhenshinOptions
-import com.khipu.khenshin.client.KhenshinResult
-import com.khipu.khenshin.client.getKhenshinLauncherIntent
+import com.khipu.client.KHIPU_RESULT_EXTRA
+import com.khipu.client.KhipuOptions
+import com.khipu.client.KhipuResult
+import com.khipu.client.example.ui.theme.KhenshinSdkExampleTheme
+import com.khipu.client.getKhipuLauncherIntent
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,14 +70,14 @@ fun paymentStart() {
     var darkBackground by remember{ mutableStateOf("#ffffff") }
     var darkOnBackground by remember{ mutableStateOf("#333333") }
     var resultText by remember{ mutableStateOf("") }
-    var themeSelected by remember{ mutableStateOf(KhenshinOptions.Theme.LIGHT) }
+    var themeSelected by remember{ mutableStateOf(KhipuOptions.Theme.LIGHT) }
 
     val khipuLauncher =
         rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val intent = result.data
-                val metadata = intent?.getSerializableExtra(KHENSHIN_RESULT_EXTRA) as KhenshinResult
-                resultText = metadata.toString()
+                val metadata = intent?.getSerializableExtra(KHIPU_RESULT_EXTRA) as KhipuResult
+                resultText = metadata.asJson()
                 Log.v("TAG", metadata.asJson())
             }
         }
@@ -92,17 +91,17 @@ fun paymentStart() {
         )
 
         Switch(
-            checked = KhenshinOptions.Theme.LIGHT.equals(themeSelected),
+            checked = KhipuOptions.Theme.LIGHT.equals(themeSelected),
             onCheckedChange = {
                 if(it) {
-                    themeSelected = KhenshinOptions.Theme.LIGHT
+                    themeSelected = KhipuOptions.Theme.LIGHT
                 } else {
-                    themeSelected = KhenshinOptions.Theme.DARK
+                    themeSelected = KhipuOptions.Theme.DARK
                 }
             }
         )
 
-        if(KhenshinOptions.Theme.LIGHT.equals(themeSelected)) {
+        if(KhipuOptions.Theme.LIGHT.equals(themeSelected)) {
             Text(text = "Modo claro")
 
         } else {
@@ -122,10 +121,10 @@ fun paymentStart() {
                     toast.show()
                 } else {
                     khipuLauncher.launch(
-                        getKhenshinLauncherIntent(
+                        getKhipuLauncherIntent(
                             context = context,
                             operationId = text.value,
-                            options = KhenshinOptions.Builder()
+                            options = KhipuOptions.Builder()
 //                            .header(
 //                                KhenshinHeader.Builder()
 //                                    .headerLayoutId(processHeaderLayoutId)

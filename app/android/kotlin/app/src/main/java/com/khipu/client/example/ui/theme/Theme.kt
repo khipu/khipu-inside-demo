@@ -1,4 +1,4 @@
-package com.khipu.browser2app.khenshinsdkexample.ui.theme
+package com.khipu.client.example.ui.theme
 
 import android.app.Activity
 import android.os.Build

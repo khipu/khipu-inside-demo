@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.khipu.browser2app.khenshinsdkexample"
+    namespace = "com.khipu.client.example"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.khipu.browser2app.khenshinsdkexample"
+        applicationId = "com.khipu.client.example"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

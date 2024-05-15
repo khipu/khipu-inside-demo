@@ -1,4 +1,4 @@
-package com.khipu.browser2app.khenshinsdkexample
+package com.khipu.client.example
 
 import org.junit.Test
 
