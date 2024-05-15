@@ -1,4 +1,4 @@
-package com.khipu.browser2app.khenshinsamplejava;
+package com.khipu.client.example.java;
 
 import android.content.Context;
 import android.widget.LinearLayout;

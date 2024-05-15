@@ -1,14 +1,14 @@
 [versions]
-agp = "8.1.0"
+agp = "8.4.0"
 kotlinVersion = "2.0.0-RC2"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
-material = "1.11.0"
-activity = "1.8.0"
+material = "1.12.0"
+activity = "1.9.0"
 constraintlayout = "2.1.4"
-khenshinClientVersion = "1.2"
+khipuClientVersion = "2.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -18,7 +18,7 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-khenshin-client = {group = "com.khipu", name="khenshin-client-android", version.ref = "khenshinClientVersion"}
+khipu-client = {group = "com.khipu", name="khipu-client-android", version.ref = "khipuClientVersion"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

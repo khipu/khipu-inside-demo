@@ -20,6 +20,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Khenshin Sample Java"
+rootProject.name = "KhipuClientExampleJava"
 include(":app")
  

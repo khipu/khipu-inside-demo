@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.khipu.browser2app.khenshinsamplejava"
+    namespace = "com.khipu.client.example.java"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.khipu.browser2app.khenshinsamplejava"
+        applicationId = "com.khipu.client.example.java"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -38,7 +38,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.khenshin.client)
+    implementation(libs.khipu.client)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

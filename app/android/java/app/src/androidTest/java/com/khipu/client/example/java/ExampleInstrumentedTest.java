@@ -1,4 +1,4 @@
-package com.khipu.browser2app.khenshinsamplejava;
+package com.khipu.client.example.java;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.khipu.browser2app.khenshinsamplejava", appContext.getPackageName());
+        assertEquals("com.khipu.client.example.java", appContext.getPackageName());
     }
 }

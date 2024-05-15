@@ -1,6 +1,7 @@
-package com.khipu.browser2app.khenshinsamplejava;
+package com.khipu.client.example.java;
 
-import static com.khipu.khenshin.client.KhenshinKt.getKhenshinLauncherIntent;
+import static com.khipu.client.KhipuKt.getKhipuLauncherIntent;
+import static com.khipu.client.KhipuKt.KHIPU_RESULT_EXTRA;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -21,14 +22,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.khipu.khenshin.client.KhenshinColors;
-import com.khipu.khenshin.client.KhenshinHeader;
-import com.khipu.khenshin.client.KhenshinOptions;
-import com.khipu.khenshin.client.KhenshinResult;
-import static com.khipu.khenshin.client.KhenshinKt.KHENSHIN_RESULT_EXTRA;
+import com.khipu.client.KhipuHeader;
+import com.khipu.client.KhipuOptions;
+import com.khipu.client.KhipuResult;
+
 
 public class MainActivity extends AppCompatActivity {
-    private KhenshinOptions.Theme theme = KhenshinOptions.Theme.LIGHT;
+    private KhipuOptions.Theme theme = KhipuOptions.Theme.LIGHT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +46,14 @@ public class MainActivity extends AppCompatActivity {
         final TextView themeLabel = findViewById(R.id.switchLabel);
         final TextView resultText = findViewById(R.id.resultText);
 
-        String operationId = editText.getText().toString();
         ActivityResultLauncher khipuLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback() {
                     @Override
                     public void onActivityResult(Object o) {
                         Log.v("Callback", "mensaje final recibido " + o.toString());
-                        KhenshinResult result = (KhenshinResult) ((ActivityResult) o).getData().getExtras().getSerializable(KHENSHIN_RESULT_EXTRA);
-                        resultText.setText(result.toString());
+                        KhipuResult result = (KhipuResult) ((ActivityResult) o).getData().getExtras().getSerializable(KHIPU_RESULT_EXTRA);
+                        resultText.setText(result.asJson());
                     }
                 });
         themeSwitch.setOnClickListener(new View.OnClickListener() {
@@ -62,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (themeSwitch.isChecked()) {
                     themeLabel.setText("Modo claro");
-                    theme = KhenshinOptions.Theme.LIGHT;
+                    theme = KhipuOptions.Theme.LIGHT;
                 } else {
                     themeLabel.setText("Modo oscuro");
-                    theme = KhenshinOptions.Theme.DARK;
+                    theme = KhipuOptions.Theme.DARK;
                 }
             }
         });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(operationId == null || operationId.equals("") || operationId.equals("PAYMENT ID")) {
+                if(editText.getText().toString().isEmpty() || editText.getText().toString().equals("PAYMENT ID")) {
                     CharSequence text = "Ingrese un id de pago para iniciar";
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(getBaseContext() /* MyActivity */, text, duration);
@@ -91,25 +90,25 @@ public class MainActivity extends AppCompatActivity {
 //                String darkOnPrimary = "#ffffff";
 //                String darkBackground = "#ffffff";
 //                String darkOnBackground = "#333333";
-                khipuLauncher.launch(getKhenshinLauncherIntent(
+                khipuLauncher.launch(getKhipuLauncherIntent(
                         getBaseContext(),
-                        operationId,
-                        new KhenshinOptions.Builder()
-                                .header(
-                                        new KhenshinHeader.Builder()
-                                                .headerLayoutId(R.layout.header_layout)
-                                                .merchantNameId(R.id.merchant_name)
-                                                .paymentMethodId(R.id.payment_method_value)
-                                                .amountId(R.id.amount_value)
-                                                .subjectId(R.id.subject_value)
-                                                .build()
-                                )
+                        editText.getText().toString(),
+                        new KhipuOptions.Builder()
+//                                .header(
+//                                        new KhipuHeader.Builder()
+//                                                .headerLayoutId(R.layout.header_layout)
+//                                                .merchantNameId(R.id.merchant_name)
+//                                                .paymentMethodId(R.id.payment_method_value)
+//                                                .amountId(R.id.amount_value)
+//                                                .subjectId(R.id.subject_value)
+//                                                .build()
+//                                )
                                 .topBarTitle("Khipu")
                                 .theme(theme)
                                 .skipExitPage(false)
                                 .locale("es_CL")
 //                                .colors(
-//                                        new KhenshinColors.Builder()
+//                                        new KhipuColors.Builder()
 //                                                .lightTopBarContainer(lightTopBarContainer)
 //                                                .lightOnTopBarContainer(lightOnTopBarContainer)
 //                                                .lightPrimary(lightPrimary)
