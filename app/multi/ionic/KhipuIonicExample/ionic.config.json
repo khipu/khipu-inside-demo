@@ -1,0 +1,7 @@
+{
+  "name": "KhipuIonicExample",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
